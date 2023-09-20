@@ -23,23 +23,23 @@ def home(request):
                'total_status': total_status,'approved': approved,
                  'pending': pending,'declined': declined}
 
-    return render(request, 'accounts/dashboard.html', context)   
+    return render(request, 'accounts/User/dashboard.html', context)   
 
 def requester(request,):
     requester = Requester.objects.all()
     context= {'requester': requester, 'products': products}
-    return render(request, 'accounts/requester.html', context)
+    return render(request, 'accounts/User/requester.html', context)
 
 def products(request):
     products = Products.objects.all()   
-    return render(request, 'accounts/products.html', {'products': products})
+    return render(request, 'accounts/User/products.html', {'products': products})
 
 def status(request):
     
-    return render(request, 'accounts/status.html') 
+    return render(request, 'accounts/User/status.html') 
 
 def homepage(request):
-    return render(request, 'accounts/homepage.html')
+    return render(request, 'accounts/User/homepage.html')
 
 def register(request):
 
@@ -65,7 +65,7 @@ def register(request):
 
 
 
-    return render(request, 'accounts/register.html')
+    return render(request, 'accounts/User/register.html')
 
 from django.contrib.auth import login as auth_login
 
@@ -79,12 +79,12 @@ def login(request):
         if user is not None:
             auth_login(request, user)  # Use auth_login here to avoid conflicts
             fname = user.first_name
-            return render(request, "accounts/requester.html", {'fname': fname})
+            return render(request, "accounts/User/requester.html", {'fname': fname})
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
     
-    return render(request, 'accounts/login.html')
+    return render(request, 'accounts/User/login.html')
 
 
 
