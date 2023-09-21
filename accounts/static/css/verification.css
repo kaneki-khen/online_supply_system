@@ -49,6 +49,12 @@ body {
     top: 350px;
 }
 
+.form input{
+    height: 45px;
+    width: 42px;
+}
+
+
 .wrapper .verification_icon {
     position: relative;
     bottom: 20px;
