@@ -82,13 +82,11 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'supplysystem',
-        'HOST': 'localhost',
-        'PORT': 27017
+        'NAME': 'inventorydb',
     }
 }
 
-# jelyn database
+# # jelyn database
 # DATABASES = {
 # 'default': {
 #       'ENGINE': 'djongo',
