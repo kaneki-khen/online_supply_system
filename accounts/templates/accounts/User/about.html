@@ -33,12 +33,12 @@
       <div class="sidebar">
         <div class=" bg-white" id="sidebar-wrapper">
           <div class="list-group">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Home</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
               <img class="arrow_img" src="{% static 'images/Arrow.png' %}" alt=""> Logout
             </a>
           </div>

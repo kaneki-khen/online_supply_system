@@ -19,9 +19,9 @@ def home(request):
     declined = status.filter(status='Declined').count()
 
     context = {'requester':requester, 'status': status, 
-               'total_requester':  total_requester,
-               'total_status': total_status,'approved': approved,
-                 'pending': pending,'declined': declined}
+    'total_requester':  total_requester,
+    'total_status': total_status,'approved': approved,
+    'pending': pending,'declined': declined}
 
     return render(request, 'accounts/User/dashboard.html', context)   
 
@@ -53,7 +53,9 @@ def register(request):
     pass1 = request.POST['pass1']
     pass2 = request.POST['pass2']
 
-    
+    if pass1 != pass2:
+        raise ValueError("password not match.")
+
     myuser = User.objects.create_user(username, email, pass1)
     myuser.first_name = fname
     myuser.last_name = lname
@@ -97,8 +99,12 @@ def forgot(request):
 def signout(request):
     pass
 
-def history(request):
-    return render(request, 'accounts/User/history.html')
+def notification(request):
+    return render(request, 'accounts/User/notification.html')
 
 def about(request):
     return render(request, 'accounts/User/about.html')
+
+def history(request):
+    return render(request, 'accounts/User/history.html')
+
