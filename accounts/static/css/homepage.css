@@ -1,0 +1,110 @@
+.property-1-default,
+.property-1-default *{
+    box-sizing: border-box;
+}
+
+.property-1-default{
+    background: #ffffff;
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+}
+
+.frame-5{
+    background: #f8edeb;
+    width:1920px;
+    height: 1080px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+.group-2{
+    position: absolute;
+    inset: 0;
+
+}
+
+.image-3{
+    position: absolute;
+    left: 147px;
+    top: 6.5px;
+    overflow: visible;
+
+}
+
+.polygon{
+    position:absolute;
+    left: 0px;
+    top: 6.5px;
+    overflow: visible;
+}
+
+.cebu-technological-university-argao-campus{
+    color: #f48c06;
+    text-align: left;
+    font: 400 48px "Hermeneus One", sans-serif;
+    position: absolute;
+    left: 62px;
+    top: 767.5px;
+    width: 822px;
+    height: 225px;
+}
+
+.cot{
+    color: #ffffff;
+    text-align: left;
+    font: 400 96px "Hermeneus One", sans-serif;
+    position: absolute;
+    left: 62px;
+    top: 308.5px;
+    width: 685px;
+    height: 318px;
+}
+
+.rectangle1 {
+    position: absolute;
+    left: 1153.79px;
+    top: 2.62px;
+    transform: translate(-0.32px, 2.88px);
+    overflow: visible;
+  }
+
+.rectangle2 {
+    position: absolute;
+    left: 248.5px;
+    top: 0px;
+    overflow: visible;
+  }
+
+.polygon2 {
+    position: absolute;
+    left: 984.01px;
+    top: 5.27px;
+    transform: translate(0px, 0px);
+    overflow: visible;
+
+}
+
+.polygon3{
+    position: absolute;
+    left: 1142px;
+    top: 5.5px;
+    overflow: visible;
+}
+
+.rectangle3{
+    position: absolute;
+    left: 304px;
+    top: 2.5px;
+    overflow: visible;
+}
+
+.one_piece{
+    position: absolute;
+    left: 952px;
+    top: 1028px;
+    overflow: visible;
+}
