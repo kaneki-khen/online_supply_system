@@ -359,8 +359,14 @@ flex-direction: row;
 
 
 .arrow_img {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
 }
-
-
+.cart_image{
+  height: 30px;
+  width: 30px;
+}
+footer{
+  background-color: #6C757D; 
+  content-visibility: auto;
+}
