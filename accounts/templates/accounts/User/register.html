@@ -1,5 +1,6 @@
 
-{% load django.template %}
+
+
 
 {% load static %}
 
@@ -23,6 +24,9 @@
     <div class="title">Online Supply System</div>
     
     <div class="wrapper">
+        <div>
+            <img class="register_icon" src="{% static 'images/registerlogo.png' %}" alt="">
+            <div>
         <form action="" method="post">
           {% csrf_token %}
           <h1>Register</h1>
@@ -51,12 +55,6 @@
             <input type="password" id="pass2" name="pass2" placeholder="Confirm Password:" required>
           </div>
       
-          {% try %}
-            {{ messages }}
-          {% except ValueError as e %}
-            <p style="color: red;">{{ e.message }}</p>
-          {% endtry %}
-      
           <button type="submit" class="btn"> Register </button>
         </form>
       </div>
@@ -64,5 +62,6 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="{% static 'js/scripts.js' %}"></script>
         </body>
         </html>

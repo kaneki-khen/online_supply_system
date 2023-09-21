@@ -53,11 +53,7 @@ def register(request):
     pass1 = request.POST['pass1']
     pass2 = request.POST['pass2']
 
-    # Check if the passwords match
-    if pass1 != pass2:
-      # If the passwords do not match, raise an error
-      raise ValueError("Passwords do not match")
-
+    
     myuser = User.objects.create_user(username, email, pass1)
     myuser.first_name = fname
     myuser.last_name = lname

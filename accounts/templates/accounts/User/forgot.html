@@ -17,14 +17,20 @@
 <body>
     <div class="title">Online Supply System</div>
     <div class="wrapper">
-        <form action="">
+        <div>
+            <img class="forgot_icon" src="{% static 'images/forgotlogo.png' %}" alt="">
+            <div>
+        <form action="" method="post">
+            
+                {% csrf_token %}
+       
             <header></header>
             <h1>Forgot Password</h1>
             <p>We’ll email you instructions on how to reset your Password.</p>
             <div class="input-box">
                 <input type="emailaddress" placeholder="Email Address:" required>
             </div>
-            <button type="submit" class="btn"> <a href="/forgot"> Forgot</a></button>
+            <button type="submit" class="btn"> <a href=""> Forgot</a></button>
         </form>
     </div>
 
