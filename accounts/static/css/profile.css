@@ -182,38 +182,12 @@
     --bs-bg-opacity: 1;
     background: linear-gradient(128.43deg, rgba(0, 53, 102, 0.92) 43.98%, rgba(0, 53, 102, 0.899983) 49.22%, rgba(0, 53, 102, 0.867118) 54.74%, rgba(0, 53, 102, 0.845939) 57.59%, rgba(0, 53, 102, 0.7636) 63.96%, rgba(0, 53, 102, 0) 170.25%) !important;
   }
-  
-  #sidebar-wrapper {
-    min-height: auto;
-    margin-left: -15rem;
-    transition: margin 0.25s ease-out;
-    border-right: 2px solid black;
-  }
-  
-  #sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
-  }
-  
-  #sidebar-wrapper .list-group {
-    width: 280px;
-  }
-
-  #page-content-wrapper {
-    min-width: 100vw;
-  }
-  
-  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
-    margin-left: 0;
-  }
-  
-  @media (min-width: 800px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
     #page-content-wrapper {
-      min-width: 0;
-      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 285px;
+      width: 1920px;
+      height: 814px;
     }
     .welcome{
       background-color: #6C757D!important;
@@ -245,30 +219,199 @@
     }
     
     .d-flex {
-        display: -ms-flexbox!important;
-        display: flex!important;
-        background-color: white;
-        visibility: visible;
-        content-visibility: auto;
-    }
-}
-.profile-picture {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 20;
+      display: -ms-flexbox!important;
+      display: flex!important;
+      background-color: white;
+      visibility: visible;
+      content-visibility: auto;
+  }
+  /* styles.css */
+
+  .home-icon {
     position: absolute;
-    left: 368px;
-    top: 296px;
-    width: 237px;
-    height: 226px;
-    background-color: black;
-    border-radius: 50%; /* Makes the image circular */
-    overflow: hidden; /* Ensures the image stays within the circular boundary */
+    left: 25px; /* Adjust the X-coordinate to 25 */
+    top: 50px; /* Adjust the Y-coordinate to 320 */
+    width: 50px; /* Set the width to 71 */
+    height: 48px; /* Set the height to 68 */
+  }
+/* CSS for the Profile Picture */
+.profile-picture {
+  position: absolute;
+  left: 1300px; /* Adjust the X-coordinate as needed */
+  top: 360px; /* Adjust the Y-coordinate as needed */
+  width: 178px; /* Set the width as needed */
+  height: 180px; /* Set the height as needed */
+  border-radius: 50%; /* Make it a circle or adjust as needed */
+}
+.username {
+  position: absolute;
+  left: 1300px;
+  top: 540px;
+  width: 383px;
+  height: 44px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600; /* semibold */
+  font-size: 48px;
+  color: #000000; /* black */
+}
+.email {
+  position: absolute;
+  left: 1320px;
+  top: 595px;
+  width: 383px;
+  height: 44px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600; /* semibold */
+  font-size: 24px;
+  color: #4190ED; /* black */
+}
+.account-id {
+  position: absolute;
+  left: 1326px;
+  top: 625px;
+  width: 383px;
+  height: 44px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600; /* semibold */
+  font-size: 24px;
+  color: #000000; /* black */
+}
+#account-id {
+  color: #4190ED;
+}
+.fname {
+  border: 2px solid #4190ED;
+  width: 420px; /* Updated width to 420px */
+  height: 46px; /* Updated height to 46px */
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 300px;
+  top: 425px;
+  color: black; /* Set text color to black */
 }
 
-#profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Maintains aspect ratio and covers the circular area */
+.fname:hover,
+.fname:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+  background-color: white;
+  color: black; /* Set text color to black when focused */
+}
+.emmail {
+  border: 2px solid #4190ED;
+  width: 420px; /* Updated width to 420px */
+  height: 53px; /* Updated height to 53px */
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 800px;
+  top: 425px;
+  color: black; /* Set text color to black */
 }
 
+.emmail:hover,
+.emmail:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+  background-color: white;
+  color: black; /* Set text color to black when focused */
+}
 
+.contact-no1 {
+  border: 2px solid #4190ED;
+  width: 420px; /* Updated width to 420px */
+  height: 46px; /* Updated height to 46px */
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 300px; /* Updated left coordinate to 787px */
+  top: 530px; /* Updated top coordinate to 585px */
+  color: black; /* Set text color to black */
+}
 
+.contact-no1:hover,
+.contact-no1:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+  background-color: white;
+  color: black; /* Set text color to black when focused */
+}
+.contact-no2 {
+  border: 2px solid #4190ED;
+  width: 420px; /* Updated width to 420px */
+  height: 46px; /* Updated height to 46px */
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 800px; /* Updated left coordinate to 787px */
+  top: 530px; /* Updated top coordinate to 585px */
+  color: black; /* Set text color to black */
+}
 
+.contact-no2:hover,
+.contact-no2:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+  background-color: white;
+  color: black; /* Set text color to black when focused */
+}
+.password {
+  border: 2px solid #4190ED;
+  width: 420px; /* Updated width to 420px */
+  height: 46px; /* Updated height to 46px */
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 550px; /* Updated left coordinate to 787px */
+  top: 640px; /* Updated top coordinate to 585px */
+  color: black; /* Set text color to black */
+}
+
+.password:hover,
+.password:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+  background-color: white;
+  color: black; /* Set text color to black when focused */
+}
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+ left: 100;
+ top: 100;
+}
