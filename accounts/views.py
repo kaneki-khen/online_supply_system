@@ -43,29 +43,36 @@ def homepage(request):
 
 def register(request):
 
-    if request.method == "POST":
-        username = request.POST['username']
-        fname = request.POST['fname']
-        lname = request.POST['lname']
-        email = request.POST['email']
-        contact1 = request.POST['contact1']
-        contact2 = request.POST['contact2']
-        pass1 = request.POST['pass1']
-        pass2 = request.POST['pass2']
+  if request.method == "POST":
+    username = request.POST['username']
+    fname = request.POST['fname']
+    lname = request.POST['lname']
+    email = request.POST['email']
+    contact1 = request.POST['contact1']
+    contact2 = request.POST['contact2']
+    pass1 = request.POST['pass1']
+    pass2 = request.POST['pass2']
 
-        myuser = User.objects.create_user(username, email, pass1)
-        myuser.first_name = fname
-        myuser.last_name = lname
+    # Check if the passwords match
+    if pass1 != pass2:
+      # If the passwords do not match, raise an error
+      raise ValueError("Passwords do not match")
 
-        myuser.save()
+    myuser = User.objects.create_user(username, email, pass1)
+    myuser.first_name = fname
+    myuser.last_name = lname
 
-        messages.success(request, "Your account is successfully created.")
+    myuser.save()
 
-        return redirect('login')
+    # Display a success message if the user is successfully registered
+    messages.success(request, "Your account is successfully created.")
+
+    return redirect('login')
 
 
 
-    return render(request, 'accounts/User/register.html')
+  return render(request, 'accounts/User/register.html')
+
 
 from django.contrib.auth import login as auth_login
 

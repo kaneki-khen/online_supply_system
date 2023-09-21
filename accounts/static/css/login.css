@@ -124,7 +124,7 @@ body {
     font: 14px;
     color: black;
     text-align: center;
-    margin-top: 40%;
+    margin-top: 20%;
     display: flex;
     justify-content: flex-start;
     margin-left: 20%;
@@ -141,3 +141,5 @@ body {
     text-decoration: underline;
     color: #007bff;
 }
+
+
