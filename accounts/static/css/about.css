@@ -260,7 +260,7 @@ flex-direction: row;
             font-family: Arial; 
         }
         p {
-            font-size: 16px;
+            font-size: 25px;
             line-height: 1.5;
             margin-right: 20px;
         
@@ -276,6 +276,7 @@ flex-direction: row;
             margin-left: 30px;
             line-height: 1.5;
             text-align: center;
+            font-size: 25px;
         }
         h3 {
             font-size: 18px;
@@ -332,10 +333,10 @@ flex-direction: row;
           color: #fff;
         }
         .col-md-4 {
-          text-align: center; /* Center-align the text and icons */
+          text-align: center; 
       }
       
-      /* Style the social media icons */
+      
       .col-md-4 ul.list-unstyled {
           list-style: none;
           padding: 0;
