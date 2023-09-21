@@ -39,27 +39,7 @@ $(document).ready(function(){
 			$(".add-new").removeAttr("disabled");
 		}		
     });
+
+	
 });
-
-
-// Add an event listener to the form's submit button to call the validatePasswords() function
-document.getElementById('register-form').addEventListener('submit', validatePasswords);
-
-function validatePasswords() {
-  // Get the values of the password and confirm password fields
-  var pass1 = document.getElementById('pass1').value;
-  var pass2 = document.getElementById('pass2').value;
-
-  // Check if the passwords match
-  if (pass1 != pass2) {
-	// If the passwords do not match, display an error message
-	alert('Passwords do not match!');
-
-	// Prevent the form from submitting
-	return false;
-  }
-
-  // If the passwords match, allow the form to submit
-  return true;
-}
 

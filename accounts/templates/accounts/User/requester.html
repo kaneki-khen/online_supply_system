@@ -38,16 +38,17 @@
             <div class="list-group">
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#">Request Tracker</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+              
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
               </a>
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
 
         <div class="container-fluid">
           <div class="container">
@@ -99,12 +100,15 @@
             </table>
           </div>
           <div class="container justify-content-end align-items-baseline">
-            Total Amount: _______________
+            Total Amount: _____________
             <img  class="cart_image" src="{% static 'images/cart.png' %}" alt="">
           </div>
         </div> 
       </div> 
     </main>
+    <footer class="footer"  >
+      <p>Author:BSIT-3 STUDENTS OF CEBU TECHNOLOGICAL UNIVERSITY GINATILAN EXTENSION CAMPUS</p>
+    </footer>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

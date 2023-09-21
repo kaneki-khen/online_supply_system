@@ -77,16 +77,17 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+
+#shiela database
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'inventorydb',
-        'HOST': 'localhost',
-        'PORT': 27017
     }
 }
 
-# jelyn database
+# # jelyn database
 # DATABASES = {
 # 'default': {
 #       'ENGINE': 'djongo',
@@ -96,7 +97,7 @@ DATABASES = {
 #       'HOST': 'localhost',
 #       'PORT': 27017,
 #       }
-# }
+# # }
 # =======
 #  'default': {
 #         'ENGINE': 'djongo',
