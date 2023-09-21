@@ -92,3 +92,7 @@ def signout(request):
     pass
 
 
+def profile(request):
+    return render(request, 'accounts/User/profile.html')
+
+
