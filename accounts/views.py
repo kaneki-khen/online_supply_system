@@ -98,3 +98,6 @@ def signout(request):
     pass
 
 
+def about(request):
+    return render(request, 'accounts/User/about.html')
+
