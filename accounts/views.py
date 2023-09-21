@@ -107,3 +107,6 @@ def signout(request):
 def about(request):
     return render(request, 'accounts/User/about.html')
 
+def history(request):
+    return render(request, 'accounts/User/history.html')
+

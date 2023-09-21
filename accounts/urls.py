@@ -11,5 +11,8 @@ urlpatterns = [
    path('forgot/',views.forgot),
    path('reset/',views.reset),
    path('login/',views.login, name='login'),
+
    path('about/',views.about, name='about'),
+
+   path('history/',views.history, name='history'),
 ]
