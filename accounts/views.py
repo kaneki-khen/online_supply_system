@@ -96,8 +96,15 @@ def login(request):
 def forgot(request):
     return render(request, 'accounts/User/forgot.html')
 
+def reset(request):
+    return render(request, 'accounts/User/reset.html')
 
 
 def signout(request):
     pass
 
+<<<<<<< HEAD
+=======
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
+>>>>>>> 5bb5154040c1b55e5933ba243aabd597a281a15f
