@@ -32,6 +32,7 @@ body {
 padding: 0px !important;
 
 
+
 }
 
 .ctu_logo{
@@ -257,13 +258,15 @@ flex-direction: row;
             align-items: flex-start; 
             color: white;
             margin-left: 20px;
-            font-family: Arial; 
+            font-family: sans-serif
+
         }
         p {
             font-size: 16px;
             line-height: 1.5;
             margin-right: 20px;
             font-size: 20px;
+            font-family: serif;
         
         }
         
@@ -278,11 +281,13 @@ flex-direction: row;
             line-height: 1.5;
             text-align: center;
             font-size: 20px;
+            font-family: serif;
         }
         h3 {
             font-size: 18px;
             margin-top: 20px;
             text-align: center;
+            font-family: serif;
             
         }
         p {
@@ -310,11 +315,13 @@ flex-direction: row;
         footer h5 {
             font-size: 18px;
             color: #fff;
+           
         }
 
         footer ul {
             list-style: none;
             padding: 0;
+           
         }
 
         footer ul li {
@@ -359,14 +366,21 @@ flex-direction: row;
       }
       .additional-footer {
         background-color: gray; 
-        padding: 10px 0;
+        padding: 8px 0;
         text-align: center;
       }
       .about h5 {
         text-align: center;
-        font-size: 30px;
+        font-size: 37px;
+        font-family: serif,bold;
+        line-height: 1.5;
+     
        
       }
+      .container {
+        font-family: serif;
+        line-height: 1.5;
+    }
       
        
        
