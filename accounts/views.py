@@ -35,14 +35,12 @@ def products(request):
     return render(request, 'accounts/User/products.html', {'products': products})
 
 def status(request):
-    
     return render(request, 'accounts/User/status.html') 
 
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
 def register(request):
-
   if request.method == "POST":
     username = request.POST['username']
     fname = request.POST['fname']
@@ -99,6 +97,11 @@ def forgot(request):
 def reset(request):
     return render(request, 'accounts/User/reset.html')
 
+def about(request):
+    return render(request, 'accounts/User/about.html')
+
+def history(request):
+    return render(request, 'accounts/User/history.html')
 
 def signout(request):
     pass
