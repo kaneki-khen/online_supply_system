@@ -97,7 +97,9 @@
         <div 
         class="container justify-content-end align-items-baseline">
           Total Amount: _______________
-          <img  class="cart_image"  src="{% static 'images/cart.png' %}" alt="">
+          <a href="#" onclick="showConfirmationPopup()">
+            <img src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
+          </a>
           <div id="confirmationPopup" class="popup">
             <span class="popup-close" onclick="hideConfirmationPopup()">X</span>
             <h2>Purchase Request Confirmation</h2>
