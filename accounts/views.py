@@ -82,7 +82,7 @@ def login(request):
         if user is not None:
             auth_login(request, user)  # Use auth_login here to avoid conflicts
             fname = user.first_name
-            return render(request, "accounts/User/requester.html", {'fname': fname})
+            return render(request, "accounts/User/notification.html", {'fname': fname})
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
