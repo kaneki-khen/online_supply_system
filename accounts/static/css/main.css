@@ -380,4 +380,6 @@ footer{
   align-content: center;
   justify-content: space-evenly;
   padding: 17px !important;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 }
