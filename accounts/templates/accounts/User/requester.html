@@ -56,19 +56,20 @@
           </div>
           <form>
             <div class="form-group mb-3">
-              <label for="exampleFormControlSelect1">Choose Department:</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Department 1</option>
-                <option>Department 2</option>
-                <option>Department 3</option>
-                <option>Department 4</option>
-                <option>Add a Department</option>
+              <label for="departmentDropdown">Choose Department:</label>
+              <select class="form-control" id="departmentDropdown">
+    <option value="option1">Department 1</option>
+    <option value="option2">Department 2</option>
+    <option value="option3">Department 3</option>
+               <input type="text" class="form-control" id="newDepartment" placeholder="Enter new department">
+     
+                  <button class="btn btn-info" type="button" id="addDepartmentBtn">Add Department</button>
+                  <!-- Departments will be added here dynamically -->
               </select>
-            </div>
-            <div class="form-group mb-3">
-              <label for="exampleFormControlTextarea1">Purpose</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+          
+              <div id="otherText" style="display: none;">
+    <input type="text" id="otherTextInput" placeholder="Others please specify">
+  </div>
           </form>
           <div class="text-start my-2">
             <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
@@ -139,4 +140,23 @@
       });
   </script>
     
+  <script>
+    $(document).ready(function () {
+                // Add department when the "Add Department" button is clicked
+                $("#addDepartmentBtn").click(function () {
+                    // Get the new department name from the input field
+                    var newDepartment = $("#newDepartment").val();
+    
+                    // Check if the user entered a department name and it's not empty
+                    if (newDepartment.trim() !== "") {
+                        // Add the new department as an option in the select element
+                        $("#departmentDropdown").append('<option>' + newDepartment + '</option>');
+    
+                        // Clear the input field
+                        $("#newDepartment").val("");
+                    }
+                });
+    
+            });
+    </script>
 </html>
