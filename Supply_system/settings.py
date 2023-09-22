@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.template',
     'accounts',
     'djongo',
 ]
@@ -76,6 +77,9 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+
+#shiela database
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -83,17 +87,17 @@ DATABASES = {
     }
 }
 
-# jelyn database
-DATABASES = {
-'default': {
-      'ENGINE': 'djongo',
-      'NAME':  'mydatabase',  
-      'USERNAME': 'lalyang',
-      'PASSWORD': 'lalyang123',
-      'HOST': 'localhost',
-      'PORT': 27017,
-      }
-# }
+# # jelyn database
+# DATABASES = {
+# 'default': {
+#       'ENGINE': 'djongo',
+#       'NAME':  'mydatabase',  
+#       'USERNAME': 'lalyang',
+#       'PASSWORD': 'lalyang123',
+#       'HOST': 'localhost',
+#       'PORT': 27017,
+#       }
+# # }
 # =======
 #  'default': {
 #         'ENGINE': 'djongo',
@@ -103,7 +107,7 @@ DATABASES = {
 #         'HOST': 'localhost',    # MongoDB host (can be a different host if MongoDB is not on the same server)
 #         'PORT': 27017,          # MongoDB port (default is 27017)
 #  }
-}
+# }
 
 
 # Password validation
@@ -153,3 +157,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ralphsample1@gmail.com'
+EMAIL_HOST_PASSWORD = 'ckqz kusp ywcp arly'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'CodingWithMitch Team <noreply@codingwithmitch.com>'

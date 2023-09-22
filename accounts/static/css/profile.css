@@ -116,12 +116,12 @@
     background: linear-gradient(128.43deg, rgba(0, 53, 102, 0.92) 43.98%, rgba(0, 53, 102, 0.899983) 49.22%, rgba(0, 53, 102, 0.867118) 54.74%, rgba(0, 53, 102, 0.845939) 57.59%, rgba(0, 53, 102, 0.7636) 63.96%, rgba(0, 53, 102, 0) 170.25%);
   }
   .background-image {
-    width: 1064px; /* Set the desired width */
-    height: 1034px; /* Set the desired height */
-    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
-    opacity: 80%; /* Set opacity to 50% */
+    width: 1064px;
+    height: 1034px;
+    object-fit: cover;
+    opacity: 80%;
     left: 440px;
-    top: 10px; /* Set the Y-coordinate */
+    top: 10px;
     object-fit: cover;
     position: absolute;
 }
@@ -230,7 +230,6 @@
       visibility: visible;
       content-visibility: auto;
   }
-
   .home-icon {
     position: absolute;
     left: 25px;
@@ -389,8 +388,25 @@
   color: black;
 }
 
-.password:hover,
-.password:focus {
+.pass2 {
+  border: 2px solid #4190ED;
+  width: 420px;
+  height: 46px; 
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 550px;
+  top: 720px;
+  color: black;
+}
+
+
+.pass2:hover,
+.pass2:focus {
   border: 2px solid #4A9DEC;
   box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
   background-color: white;
