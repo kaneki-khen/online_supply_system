@@ -34,7 +34,7 @@ body {
     margin-right: 80px;
 }
 
-.wrapper {
+.container {
     width: 380px;
     height: 450px;
     background: rgba(255, 255, 255, 0.486);
@@ -49,7 +49,7 @@ body {
     top: 270px;
 }
 
-.wrapper .login_icon {
+.container .login_icon {
     position: relative;
     bottom: 20px;
     right: 20;
@@ -59,14 +59,14 @@ body {
     margin: 0 auto;
 }
 
-.wrapper h1 {
+.container h1 {
     font-size: 34px;
     text-align: center;
     margin-top: 0;
     margin-bottom: 35px;
 }
 
-.wrapper .input-box {
+.container .input-box {
     position: relative;
     width: 270px;
     height: 40px;
@@ -87,7 +87,7 @@ body {
     box-shadow: 0 0 3px black;
 }
 
-.wrapper .forgot {
+.container .forgot {
     display: flex;
     justify-content: flex-start;
     font-size: 16px;
@@ -109,7 +109,7 @@ body {
     text-decoration: underline;
 }
 
-.wrapper .btn {
+.container .btn {
     width: 40%;
     height: 30px;
     background: #F48C06;
@@ -126,11 +126,11 @@ body {
     line-height: 10px;
 }
 
-.wrapper .btn:hover{
+.container .btn:hover{
     color: white;
 }
 
-.wrapper .register-link {
+.container .register-link {
     font: 14px;
     color: black;
     text-align: center;

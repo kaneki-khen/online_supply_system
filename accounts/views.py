@@ -103,16 +103,5 @@ def reset(request):
 def signout(request):
     pass
 
-
-<<<<<<< HEAD
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
-def history(request):
-    return render(request, 'accounts/User/history.html')
-
-=======
-
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
->>>>>>> a90c159e000e5ce5a5fa898816c846d9d684a355
