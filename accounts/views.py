@@ -95,23 +95,24 @@ def forgot(request):
 def reset(request):
     return render(request, 'accounts/User/reset.html')
 
+def verify(request):
+    return render(request, 'accounts/User/verify.html')
+
 def about(request):
     return render(request, 'accounts/User/about.html')
 
 def history(request):
     return render(request, 'accounts/User/history.html')
 
-def signout(request):
-    pass
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
 
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
-def tracker(request):
-    return render(request, 'accounts/User/tracker.html')
-
 def profile(request):
     return render(request, 'accounts/User/profile.html')
+
+
+def signout(request):
+    pass
