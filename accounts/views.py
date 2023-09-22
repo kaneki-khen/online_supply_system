@@ -101,5 +101,3 @@ def forgot(request):
 def signout(request):
     pass
 
-def notification(request):
-    return render(request, 'accounts/User/notification.html')
