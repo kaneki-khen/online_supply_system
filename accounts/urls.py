@@ -11,13 +11,7 @@ urlpatterns = [
    path('forgot/',views.forgot),
    path('reset/',views.reset),
    path('login/',views.login, name='login'),
-<<<<<<< HEAD
-   
-=======
    path('tracker/',views.tracker, name='tracker'),
-
    path('about/',views.about, name='about'),
-
    path('history/',views.history, name='history'),
->>>>>>> 5bb5154040c1b55e5933ba243aabd597a281a15f
 ]
