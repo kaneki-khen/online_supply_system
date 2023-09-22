@@ -36,19 +36,11 @@
         <div class="sidebar">
           <div class=" bg-white" id="sidebar-wrapper">
             <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3  border-0" href="#!">Home</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Home</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-2 border-0" href="#!"></a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
               </a>
@@ -61,21 +53,21 @@
             <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
           </div>
           <form>
-            <div class="form-group mb-3 p-3">
+            <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
               <select class="form-control" id="departmentDropdown">
-                <option value="option1">Department 1</option>
-                <option value="option2">Department 2</option>
-                <option value="option3">Department 3</option>
-                <div class="btn"> 
-                  <input type="text" class="form-control" id="newDepartment" placeholder="Enter new department">
-                    <button class="btn btn-info" type="button" id="addDepartmentBtn">Add Department</button>
-                    <!-- Departments will be added here dynamically -->
-                </div>   
+    <option value="option1">Department 1</option>
+    <option value="option2">Department 2</option>
+    <option value="option3">Department 3</option>
+               <input type="text" class="form-control" id="newDepartment" placeholder="Enter new department">
+     
+                  <button class="btn btn-info" type="button" id="addDepartmentBtn">Add Department</button>
+                  <!-- Departments will be added here dynamically -->
               </select>
-                <div id="otherText" style="display: none; padding: 3rem;">
-              <input type="text" id="otherTextInput" placeholder="Others please specify">
-            </div>
+          
+              <div id="otherText" style="display: none;">
+    <input type="text" id="otherTextInput" placeholder="Others please specify">
+  </div>
 
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1">Purpose</label>
@@ -105,19 +97,18 @@
         <div 
         class="container justify-content-end align-items-baseline">
           Total Amount: _______________
-          <a href="https://www.instagram.com/" target="_blank"> 
           <img  class="cart_image"  src="{% static 'images/cart.png' %}" alt="">
-          </a>
+          <div id="confirmationPopup" class="popup">
+            <span class="popup-close" onclick="hideConfirmationPopup()">X</span>
+            <h2>Purchase Request Confirmation</h2>
+            <!-- Add your confirmation content here -->
+            <p>Your purchase request has been received and is being processed.</p>
+          </div>
         </div>
       </div>
       </div> 
       <div>
     </div> 
-    </main>
-    <main>
-      <footer class="footer">
-        
-      </footer>
     </main>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -176,4 +167,15 @@
     
             });
     </script>
+
+    <script>
+      function showConfirmationPopup() {
+        document.getElementById('confirmationPopup').style.display = 'block';
+      }
+    
+      function hideConfirmationPopup() {
+        document.getElementById('confirmationPopup').style.display = 'none';
+      }
+    </script>
+    
 </html>
