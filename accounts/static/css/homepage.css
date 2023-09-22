@@ -1,110 +1,151 @@
-.property-1-default,
-.property-1-default *{
-    box-sizing: border-box;
-}
-
-.property-1-default{
-    background: #ffffff;
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+    font-family: 'Hermenes-one', sans-serif;
+    overflow: hidden;
     width: 1920px;
     height: 1080px;
-    position: relative;
-    overflow: hidden;
+    position:absolute;
 }
 
-.frame-5{
-    background: #f8edeb;
-    width:1920px;
+.container {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-color: #ffffff;
+
+}
+
+.frame {
+
+    background-image: url(ctu_pic.png);
+    background-size: 1773px 1080px;
+    background-repeat: no-repeat;
+    width: 1773px;
     height: 1080px;
     position: absolute;
-    left: 0px;
+    overflow: visible;
+    left: 200px;
     top: 0px;
-    overflow: hidden;
 }
 
-.group-2{
+.trapezoid {
     position: absolute;
-    inset: 0;
-
-}
-
-.image-3{
-    position: absolute;
-    left: 147px;
-    top: 6.5px;
-    overflow: visible;
-
-}
-
-.polygon{
-    position:absolute;
+    border-bottom: 1080px solid #003566;
+    border-left: 0px solid transparent;
+    border-right: 1250px solid transparent;
+    height: 0px;
+    width: 300px;
     left: 0px;
-    top: 6.5px;
-    overflow: visible;
+    opacity: 97%;
+}
+   
+
+
+.parallelogram1 {
+    width: 20px;
+    height: 1085px;
+    transform: skew(48deg);
+    background: #ffffff;
+    position: absolute;
+    left: 900px;
+    top: 0px;
+  
+
 }
 
-.cebu-technological-university-argao-campus{
-    color: #f48c06;
-    text-align: left;
-    font: 400 48px "Hermeneus One", sans-serif;
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 1083px solid #f48c06;
     position: absolute;
-    left: 62px;
-    top: 767.5px;
-    width: 822px;
-    height: 225px;
+    left: 900px;
+    top: 4.5px;
+    transform: skew(49deg);
+    opacity: 95%;
 }
 
-.cot{
-    color: #ffffff;
-    text-align: left;
-    font: 400 96px "Hermeneus One", sans-serif;
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 600px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 550px solid #f48c06;
     position: absolute;
-    left: 62px;
-    top: 308.5px;
+    left: 1350px;
+    top: 0px;
+    opacity: 80%;
+}
+
+.parallelogram2 {
+    width: 15px;
+    transform: skew(48deg);
+    background: #fff;
+    height: 640px;
+    position: absolute;
+    left: 1705px;
+   
+}
+
+.triangle-down2 {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 550px solid #003566;
+    position: absolute;
+    left: 1600px;
+    top: 0px;
+    transform: skew(50deg);
+    opacity: 80%;
+
+}
+
+.cot {
+    position: absolute;
     width: 685px;
     height: 318px;
+    left: 10px;
+    top: 150px;
+    font-family: 'Hermeneus One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 100px;
+    color: #ffff;
+    text-align: center;
 }
 
-.rectangle1 {
+.ctu {
     position: absolute;
-    left: 1153.79px;
-    top: 2.62px;
-    transform: translate(-0.32px, 2.88px);
-    overflow: visible;
-  }
+    width: 822px;
+    height: 225px;
+    left: 10px;
+    top: 500px;
+    font-family: 'Hermeneus One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 58px;
+    color: #F48C06;
+    text-align: end;
+}
 
-.rectangle2 {
+.login {
     position: absolute;
-    left: 248.5px;
-    top: 0px;
-    overflow: visible;
-  }
+    left: 1000px;
+    top: 800px;
+    width: 100px;
+    fill: #ffffff;
+    height: 37px;
 
-.polygon2 {
-    position: absolute;
-    left: 984.01px;
-    top: 5.27px;
-    transform: translate(0px, 0px);
-    overflow: visible;
 
 }
 
-.polygon3{
-    position: absolute;
-    left: 1142px;
-    top: 5.5px;
-    overflow: visible;
-}
-
-.rectangle3{
-    position: absolute;
-    left: 304px;
-    top: 2.5px;
-    overflow: visible;
-}
-
-.one_piece{
-    position: absolute;
-    left: 952px;
-    top: 1028px;
-    overflow: visible;
+.svg {
+    color: #ffffff;
 }

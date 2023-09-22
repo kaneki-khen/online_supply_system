@@ -1,193 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible"content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+<html lang="en" dir="ltr">
 
-        <style>
-            a,
-            button,
-            input,
-            select,
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            *{
-                margin: 0;
-                padding: 0;
-                border: none;
-                text-decoration: none;
-                appearance: none;
-                background: none;
+  <head>
 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <link rel="stylsheet" media="screen" href="https://fontlibrary.org//face/hermenes" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <title>Landing Page</title>
 
-                
-            }
-        </style>
-        <title>Landing Page</title>
-    </head>
-    <body>
-        <div class="property-1-default">
-            <div class="frame-5">
-                <div class="group-2">
-                    <img
-                        src="{% static 'images/ctu_pic.png' %}"
-                        width="1773"
-                        height="1080"
-                        viewBox="0 0 1773 1080"
-                        fill="none">
-                    <svg
-                        class="polygon"
-                        width="1358"
-                        height="1080"
-                        viewBox="0 0 1358 1080"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                        d="M0.5 1H305.402L1356.81 1079H0.5V1Z"
-                        fill="url(#paint0_linear_1_26)"
-                        stroke="black"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="paint0_linear_1_26"
-                            x1="1217.5"
-                            y1="-542.5"
-                            x2="3523.5"
-                            y2="976.5"
-                            gradientUnits="userSpaceOnUse">
-                            >
-                            <stop stop-color="#003566" />
-                            <stop offset="1" stop-color="#003566" stop-opacity="0" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
+  </head>
+  <body>
 
-                      <div class="cebu-technological-university-argao-campus">
-                        Cebu Technological University <br/> Argao Campus
-                      </div>
-
-                      <div class= "cot">
-                        COLLEGE <br/>
-                        OF <br/>
-                        TECHNOLOGY <br/>
-                      </div>
-
-                      <svg class="rectangle1"
-                            width="907"
-                            height="728"
-                            viewBox="0 0 907 728"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                            d="M96 3.5L838.892 703.239L836.216 727.592L462.727 375.183L69.4767 3.50003L96 3.5Z"
-                            fill="white"/>
-                        </svg>
-
-                        <svg class="rectangle2"
-                            width="1074"
-                            height="1085"
-                            viewBox="0 0 1074 1085"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.5 0L1074 1085H1053.5L0.5 0H19.5Z" fill="white" />
-                        </svg>
-
-                        <svg
-                        class="polygon2"
-                        width="936"
-                        height="763"
-                        viewBox="0 0 936 763"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                        d="M158.5 5.2727L516 348L663.5 493L721 550.5L804 629L936 758L0.0131836 5.27271L158.5 5.2727Z"
-                        fill="url(#paint0_linear_1_31)"/>
-                        <defs>
-                            <linearGradient
-                              id="paint0_linear_1_31"
-                              x1="114"
-                              y1="577"
-                              x2="4798.5"
-                              y2="1554.5"
-                              gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#003566" />
-                              <stop offset="1" stop-color="#003566" stop-opacity="0" />
-                            </linearGradient>
-                        </defs>
-                      </svg>
-
-                      <svg
-                      class="polygon3"
-                      width="778"
-                      height="756"
-                      viewBox="0 0 778 756"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M778 0.5V755.5L0 0.5H778Z"
-                        fill="url(#paint0_linear_1_32)"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="paint0_linear_1_32"
-                          x1="778.497"
-                          y1="0.499964"
-                          x2="164.954"
-                          y2="544.595"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#F48C06" stop-opacity="0" />
-                          <stop offset="0.315971" stop-color="#F48C06" stop-opacity="0.677878"/>
-                          <stop offset="0.508512" stop-color="#F48C06" />
-                        </linearGradient>
-                      </defs>
-                      </svg>
-
-                      <svg class="rectangle3"
-                        width="1219"
-                        height="1084"
-                        viewBox="0 0 1219 1084"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0.5L1219 1084H1051.5L528 548L0 0.5Z" fill="#F48C06" />
-                        </svg>
-                  </div>
-
-                 <nav class="nav container">
-                  <a href="{% url 'login' %}"  class="nav__logo">
-                    <svg class="one_piece"
-                        width="53"
-                        height="37"
-                        viewBox="0 0 53 37"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.8264 32.9018L13.25 31.1031L26.5 21.8531L39.75 31.1031L37.1736 32.9018L26.5 25.4632L15.8264 32.9018ZM15.8264 23.4976L13.25 21.699L26.5 12.449L39.75 21.699L37.1736 23.4976L26.5 16.059L15.8264 23.4976ZM15.8264 14.0934L13.25 12.2948L26.5 3.0448L39.75 12.2948L37.1736 14.0934L26.5 6.65484L15.8264 14.0934Z"
-                        fill="white"/> </svg>
-                  </a>
-                 </nav>
-
-                  </svg>
-                  </div>
-
-                  
-
-              
-
-                        
-
-
-            
-
-                </div>
-            </div>
-            
+    <div class="container">
+      <div class="frame"></div>
+      <div class="trapezoid"></div>
+      <div class="parallelogram1"></div>
+      <div class="triangle-up"></div>
+      <div class="triangle-down"></div>
+      <div class="parallelogram2"></div>
+      <div class="triangle-down2"></div>
+      <h1 class="cot">COLLEGE<br>OF<br>TECHNOLOGY</h1>
+      <p class="ctu">Cebu Technological University<br>Argao Campus</p>
+      <div class="login">
+          <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"
+          height="45" 
+          viewBox="0 -960 960 960" 
+          width="60">
+          <path d="m296-224-56-56 240-240 240 240-56 56-184-183-184 183Zm0-240-56-56 240-240 240 240-56 56-184-183-184 183Z"/>
+          </svg>
+          </a>
         </div>
-    </body>
+       
 
+    </div>
+  </body>
 </html>
