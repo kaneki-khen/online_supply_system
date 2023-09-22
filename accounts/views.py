@@ -82,7 +82,7 @@ def login(request):
         if user is not None:
             auth_login(request, user)  # Use auth_login here to avoid conflicts
             fname = user.first_name
-            return render(request, "accounts/User/requester.html", {'fname': fname})
+            return render(request, "accounts/User/notification.html", {'fname': fname})
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
@@ -104,17 +104,15 @@ def about(request):
 def history(request):
     return render(request, 'accounts/User/history.html')
 
-def signout(request):
-    pass
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
 
 def notification(request):
     return render(request, 'accounts/User/notification.html')
 
-def about(request):
-    return render(request, 'accounts/User/about.html')
-
-def tracker(request):
-    return render(request, 'accounts/User/tracker.html')
-
 def profile(request):
     return render(request, 'accounts/User/profile.html')
+
+
+def signout(request):
+    pass

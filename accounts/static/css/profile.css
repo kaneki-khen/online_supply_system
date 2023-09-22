@@ -295,7 +295,7 @@ position: absolute;
 left: 300px;
 top: 425px;
 color: black;
-
+}
 .fname:hover,
 .fname:focus {
 border: 2px solid #4A9DEC;
@@ -327,7 +327,7 @@ background-color: white;
 color: black;
 }
 
-.contact-no1 {
+.contact1 {
 border: 2px solid #4190ED;
 width: 420px;
 height: 46px;
@@ -343,13 +343,14 @@ top: 530px;
 color: black;
 }
 
-.contact-no1:hover,
-.contact-no1:focus {
+.contact1:hover,
+.contact1:focus {
 border: 2px solid #4A9DEC;
 box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
 background-color: white;
 color: black;
-.contact-no2 {
+}
+.contact2 {
 border: 2px solid #4190ED;
 width: 420px;
 height: 46px;
@@ -365,8 +366,8 @@ top: 530px;
 color: black;
 }
 
-.contact-no2:hover,
-.contact-no2:focus {
+.contact2:hover,
+.contact2:focus {
 border: 2px solid #4A9DEC;
 box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
 background-color: white;
@@ -387,8 +388,15 @@ left: 550px;
 top: 640px;
 color: black;
 }
+.password:hover,
+.password:focus {
+border: 2px solid #4A9DEC;
+box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+background-color: white;
+color: black;
+}
 
-.pass2 {
+.re-type-pass {
 border: 2px solid #4190ED;
 width: 420px;
 height: 46px; 
@@ -403,33 +411,8 @@ left: 550px;
 top: 720px;
 color: black;
 }
-
-
-.pass2:hover,
-.pass2:focus {
-border: 2px solid #4A9DEC;
-box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
-background-color: white;
-color: black;
-}
-.password-confirm {
-border: 2px solid #4190ED;
-width: 420px;
-height: 46px;
-padding-left: 0.8em;
-outline: none;
-overflow: hidden;
-background-color: #F3F3F3;
-border-radius: 10px;
-transition: all 0.5s;
-position: absolute;
-left: 550px;
-top: 720px;
-color: black;
-}
-
-.password-confirm:hover,
-.password-confirm:focus {
+.re-type-pass:hover,
+.re-type-pass:focus {
 border: 2px solid #4A9DEC;
 box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
 background-color: white;
@@ -468,7 +451,7 @@ width: 100%;
 background-color: #fff;
 color: #282936;
 }
-}
-}
+
+
 
 

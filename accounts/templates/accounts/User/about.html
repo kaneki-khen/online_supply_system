@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="{% static 'css/about.css' %}">
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
 
   <body>
@@ -34,8 +35,8 @@
         <div class=" bg-white" id="sidebar-wrapper">
           <div class="list-group">
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">

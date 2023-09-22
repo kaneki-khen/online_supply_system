@@ -11,6 +11,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="{% static 'css/history.css' %}">
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
   </head>
   <body>
@@ -36,18 +37,14 @@
         <div class=" bg-white" id="sidebar-wrapper">
           <div class="list-group">
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
-  class="vector"
-  width="45"
-  height="42"
-  viewBox="0 0 45 42"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
+              <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
+            </a>
+
   <g filter="url(#filter0_d_238_15)">
     <path
       d="M5 42C3.625 42 2.44792 41.5431 1.46875 40.6292C0.489583 39.7153 0 38.6167 0 37.3333V4.66667C0 3.38333 0.489583 2.28472 1.46875 1.37083C2.44792 0.456944 3.625 0 5 0H22.5V4.66667H5V37.3333H22.5V42H5ZM32.5 32.6667L29.0625 29.2833L35.4375 23.3333H15V18.6667H35.4375L29.0625 12.7167L32.5 9.33333L45 21L32.5 32.6667Z"
@@ -150,7 +147,6 @@
 
             <div class="form-group mb-3">
               <div class="purchase-request-no-0000002">Purchase Request No. 0000002</div>
-              <div class="rectangle-23"></div>
 
 
               </tr>
