@@ -15,4 +15,5 @@ urlpatterns = [
    path('notif/',views.notification, name='notification'),
    path('about/',views.about, name='about'),  
    path('history/',views.history, name='history'),
+   path('profile/',views.profile, name='profile'),
 ]

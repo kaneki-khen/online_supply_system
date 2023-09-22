@@ -112,3 +112,6 @@ def about(request):
 
 def tracker(request):
     return render(request, 'accounts/User/tracker.html')
+
+def profile(request):
+    return render(request, 'accounts/User/profile.html')
