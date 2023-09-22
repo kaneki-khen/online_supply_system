@@ -36,20 +36,44 @@ body {
 
 .wrapper {
     width: 380px;
-    height: 450px;
+    height: 345px;
     background: rgba(255, 255, 255, 0.486);
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
     color: #003566;
-    padding: 60px 40px;
+    padding: 50px;
     padding-right: 60px;
     border-style: solid;
     border-width: 2px;
     position: absolute;
     left: 1100px;
-    top: 270px;
+    top: 350px;
 }
 
-.wrapper .login_icon {
+.otp-bx{
+    display: flex;
+}
+
+.otp-bx input {
+    width: 50px;
+    height: auto;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    border: 1px solid black;
+    margin: auto;
+    background: none;
+    font-weight: bold;
+    transition: all 0.1s;
+}
+
+.form input{
+    height: 45px;
+    width: 42px;
+}
+
+
+.wrapper .verification_icon {
     position: relative;
     bottom: 20px;
     right: 20;
@@ -66,11 +90,20 @@ body {
     margin-bottom: 35px;
 }
 
+.wrapper p{
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 1px;
+}
+
 .wrapper .input-box {
     position: relative;
     width: 270px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.486);
+    background: rgba(255, 255, 255, 0.486);;
     margin: 15px auto;
 }
 
@@ -86,29 +119,6 @@ body {
     padding: 10px;
     box-shadow: 0 0 3px black;
 }
-
-.wrapper .forgot {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 16px;
-    margin-left: 5%;
-}
-
-.forgot label input {
-    accent-color: black;
-    margin-left: 55%;
-}
-
-.forgot a {
-    font-size: 14px;
-    color: black;
-    text-decoration: none;
-}
-
-.forgot a:hover {
-    text-decoration: underline;
-}
-
 .wrapper .btn {
     width: 40%;
     height: 30px;
@@ -119,32 +129,26 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     color: black;
-    font-weight: 250;
+    font-weight: 300;
     font-size: 14px;
-    margin-left: 59.2%;
+    margin-left: 70%;
     text-align: center;
     line-height: 10px;
+    margin-top: 50px; 
 }
 
 .wrapper .btn:hover{
     color: white;
 }
 
-.wrapper .register-link {
-    font: 14px;
-    color: black;
-    text-align: center;
-    margin-top: 20%;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 20%;
-}
-
-.register-link p a {
+.verify-link a {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 150;
     color: black;
     text-decoration: underline;
+    position: absolute;
+    top: 85%;
+    margin-left: 3.5%; 
 }
 
 .register-link p a:hover {

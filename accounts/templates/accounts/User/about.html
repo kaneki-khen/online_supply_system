@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="{% static 'css/about.css' %}">
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
 
   <body>
@@ -20,7 +21,8 @@
             <h1 class="p1">Cebu Technological University - Argao Campus</h1>
           </div>
           <div>
-            <img class="profile_img" src="{% static 'images/profile.png' %}"alt="">
+            <a href="{% url 'profile' %}"> <img class="profile_img" src="{% static 'images/profile_default_image.png' %}" alt=""></a>
+      
           <div>
             <h1 class="p1">Profile Name</h1>
           </div>
@@ -33,12 +35,12 @@
       <div class="sidebar">
         <div class=" bg-white" id="sidebar-wrapper">
           <div class="list-group">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Home</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
               <img class="arrow_img" src="{% static 'images/Arrow.png' %}" alt=""> Logout
             </a>
           </div>
@@ -64,7 +66,7 @@
                   <li>Responsive Support: Our dedicated support team is available 24/7 to provide assistance and guidance, ensuring a smooth user experience.</li>
               </ul>
       
-              <h3>ABOUT THE DEVELOPER</h3>
+              <h5>ABOUT THE DEVELOPER</h5>
               <p>This section can include information about the developer of the system.</p>
           </div>
 
@@ -77,7 +79,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <h5>Contact Us:</h5>
-                  <p>093456738652</p>
+                  <p>09345673865</p>
             
                 </div>
                 <div class="col-md-4">
