@@ -34,7 +34,7 @@ body {
     margin-right: 80px;
 }
 
-.container {
+.wrapper {
     width: 380px;
     height: 450px;
     background: rgba(255, 255, 255, 0.486);
@@ -49,7 +49,7 @@ body {
     top: 270px;
 }
 
-.container .login_icon {
+.wrapper .login_icon {
     position: relative;
     bottom: 20px;
     right: 20;
@@ -59,14 +59,14 @@ body {
     margin: 0 auto;
 }
 
-.container h1 {
+.wrapper h1 {
     font-size: 34px;
     text-align: center;
     margin-top: 0;
     margin-bottom: 35px;
 }
 
-.container .input-box {
+.wrapper .input-box {
     position: relative;
     width: 270px;
     height: 40px;
@@ -87,7 +87,7 @@ body {
     box-shadow: 0 0 3px black;
 }
 
-.container .forgot {
+.wrapper .forgot {
     display: flex;
     justify-content: flex-start;
     font-size: 16px;
@@ -109,7 +109,7 @@ body {
     text-decoration: underline;
 }
 
-.container .btn {
+.wrapper .btn {
     width: 40%;
     height: 30px;
     background: #F48C06;
@@ -119,18 +119,18 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     color: black;
-    font-weight: 300;
+    font-weight: 250;
     font-size: 14px;
     margin-left: 59.2%;
     text-align: center;
     line-height: 10px;
 }
 
-.container .btn:hover{
+.wrapper .btn:hover{
     color: white;
 }
 
-.container .register-link {
+.wrapper .register-link {
     font: 14px;
     color: black;
     text-align: center;
@@ -144,7 +144,7 @@ body {
     font-size: 14px;
     font-weight: 200;
     color: black;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .register-link p a:hover {
