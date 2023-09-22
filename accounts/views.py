@@ -95,6 +95,9 @@ def forgot(request):
 def reset(request):
     return render(request, 'accounts/User/reset.html')
 
+def verify(request):
+    return render(request, 'accounts/User/verify.html')
+
 def about(request):
     return render(request, 'accounts/User/about.html')
 
