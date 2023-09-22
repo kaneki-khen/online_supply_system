@@ -12,7 +12,7 @@ urlpatterns = [
    path('reset/',views.reset),
    path('login/',views.login, name='login'),
    path('tracker/',views.tracker, name='tracker'),
-
+   path('verify/',views.verify, name='verify'),
    path('about/',views.about, name='about'),
 
    path('history/',views.history, name='history'),
