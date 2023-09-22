@@ -369,4 +369,15 @@ flex-direction: row;
 footer{
   background-color: #6C757D; 
   content-visibility: auto;
+  -webkit-user-modify: read-write;
+  height: 40px;
+}
+
+.container {
+  display: flex;
+  color: #000;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  padding: 17px !important;
 }
