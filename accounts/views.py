@@ -108,3 +108,6 @@ def about(request):
 def history(request):
     return render(request, 'accounts/User/history.html')
 
+
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')

@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">  
@@ -38,30 +39,23 @@
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="">Resolution</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
-              
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
               </a>
             </div>
           </div>
-        </div> 
+        </div>
 
-
-
-
-        <div class="notifications">
-          <h1> <i class='bx bxs-bell'> </i>NOTIFICATIONS</h1>
-          <div class="dropdown">
-              <br>
-              <br>
-              <div class="dropdown-content">
-                  <h2>Purchase Request No.0000003 is waiting for you.</h2>
-                  <h2>Resolution for Purchase Request No.0000010 is waiting for you.</h2>
-              </div>
-                  
-          </div>
-      </div>
-  
+    <div class="request-tracker">
+        <h3>REQUEST TRACKER</h3>
+    <div class="dropdown">
+            <button class="dropbtn">00000001</button>
+    <div class="dropdown-content">
+                <a href="#">Purchase Request No. 00000001 </a>
+    </div>
+    </div>
+    </div>
+      
