@@ -36,53 +36,60 @@
             const accountIdPlaceholder = document.getElementById('account-id');
             accountIdPlaceholder.textContent = '123456';
         }
-    </script>
-</head>
-<body>
-<div class="background">
-    <div class="image-container">
-        <img class="background-image" src="{% static 'images/ctu_loogo.png' %}" alt="BG-logo">
-    </div>
-
-    <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid col-2 p-0px">
-                <img src="{% static 'images/ctu_loogo.png' %}" alt="CTU LOGO">
-            </div>
-            <div class="head col-10">
-                <h1 class="head">Online Supply Office</h1>
-                <h1 class="p1">Cebu Technological University - Argao Campus</h1>
-            </div>
-        </nav>
-    </div>
-</div>
-<h1 class="welcome">Welcome to Cebu Technological University - Argao Campus Online Supply System</h1>
-<div class="d-flex" id="wrapper">
-    <a href="">
-        <img class="home-icon" src="{% static 'images/home.png' %}" alt="Go back to home">
-    </a>
-</div>
-<img class="profile-picture" src="{% static 'images/profile-img.png' %}" alt="Profile">
-<div>
-    <input class="fname" placeholder="Full Name">
-    <input class="email" placeholder="Email Address">
-    <input class="contact-no1" type="number" placeholder="Contact No.1">
-    <input class="contact-no2" type="number" placeholder="Contact No.2">
-    <input class="password" type="password" placeholder="Password">
-    <input class="password" type="password" placeholder="Confirm Password">
-</div>
-<div>
-    <div class="username">
-        <span id="username-placeholder">Guest User</span>
-    </div>
-    <div class="email">
-        <span id="email-placeholder">user@example.com</span>
-    </div>
-    <div class="account-id">
-        <span id="account-id-placeholder">Account ID: <span id="account-id">12345</span></span>
-    </div>
-</div>
-</body>
-</html>
-
-
+        </script>
+        
+      </head>
+      <body>
+        <div class="background">
+          <div class="image-container">
+            <img class="background-image" src="{% static 'images/ctu_loogo.png' %}" alt="BG-logo">
+          </div>
+      
+          <div id="page-content-wrapper ">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+              <div class="container-fluid col-2 p-0px">
+                  <img src="{% static 'images/ctu_loogo.png' %}" alt="CTU LOGO">
+              </div>
+              <div class="head col-10">
+                  <h1 class="head">Online Supply Office</h1>
+                  <h1 class="p1">Cebu Technological University - Argao Campus</h1>
+              </div>
+            </nav>
+          </div>
+        </div>   
+        <h1 class="welcome">Welcome to Cebu Technological University - Argao Campus Online Supply System </h1>
+        <div class="d-flex" id="wrapper">
+          <a href="">
+            <img class="home-icon" src="{% static 'images/home.png' %}" alt="Go back to home">
+          </a>
+          </div>
+          <img class="profile-picture" src="{% static 'images/profile-img.png' %}" alt="Profile">
+          </div>
+        </div>
+        <div>
+        <input class="fname" placeholder="Full Name">
+        <input class="emmail" placeholder="Email Address">
+        <input class="contact-no1" type="number" placeholder="Contact No.1">
+        <input class="contact-no2" type="number" placeholder="Contact No.2">
+        <input class="password" type="password" placeholder="Password">
+        <input class="password-confirm" type="password" placeholder="Confirm Password">
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Submit</span>
+        </button>
+      </div>
+      <div>  
+        <div class="username">
+          <span id="username-placeholder">Guest User</span>
+        </div>
+        <div class="email">
+          <span id="email-placeholder">user@example.com</span>
+        </div>
+        <div class="account-id">
+          <span id="account-id-placeholder">Account ID: <span id="account-id">12345</span></span>
+        </div>
+        
+    </html>
+    {% endblock %}
