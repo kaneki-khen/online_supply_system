@@ -67,7 +67,6 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -369,9 +368,18 @@ flex-direction: row;
 footer{
   background-color: #6C757D; 
   content-visibility: auto;
-<<<<<<< HEAD
-}
-=======
+
+
+
+  -webkit-user-modify: read-write;
+  height: 40px;
 }
 
->>>>>>> f29f8dfd9dbe6a629429c4e41a9771297c2467fa
+.container {
+  display: flex;
+  color: #000;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  padding: 17px !important;
+}
