@@ -21,14 +21,18 @@
 </head>
 
 <body>
-    <div class="title">Online Supply System</div>
+    <div class="title">
+        Online Supply System
+    </div>
     
     <div class="wrapper">
         <div>
             <img class="register_icon" src="{% static 'images/registerlogo.png' %}" alt="">
             <div>
-        <form action="" method="post">
+        <action action="" method="post">
+
         {%csrf_token%}
+        
             <h1>Register</h1>
             <div class="input-box">
                 <input type="number" id="username" name="username" placeholder="CTU ID:" required oninput="maxLengthCheck(this, 10)">
@@ -77,10 +81,5 @@
                 </script>
 
             <button type="submit" class="btn"> Register </button>
-            
-    <div class="background-container">
-
-    </div>
-        
         </body>
         </html>
