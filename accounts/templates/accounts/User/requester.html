@@ -123,72 +123,73 @@
         
       </div>
     </footer>
-  </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="{% static 'js/scripts.js' %}"></script>
-  <script>
-    // Counter for item numbers
-    let itemCounter = 1;
 
-    // Function to add a new item row
-    function addNewItem() {
-        const itemTableBody = document.querySelector("#itemTable tbody");
+      <!-- JavaScript code -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="{% static 'js/scripts.js' %}"></script>
+      <script>
+        // Counter for item numbers
+        let itemCounter = 1;
 
-        // Create a new row for the item
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `
-            <th scope="row">${itemCounter}</th>
-            <td><input type="text" class="form-control" name="item_name[]"></td>
-            <td><input type="text" class="form-control" name="item_description[]"></td>
-            <td><input type="text" class="form-control" name="item_unit[]"></td>
-            <td><input type="text" class="form-control" name="item_quantity[]"></td>
-            <td><input type="text" class="form-control" name="item_price[]"></td>
-        `;
+        // Function to add a new item row
+        function addNewItem() {
+            const itemTableBody = document.querySelector("#itemTable tbody");
 
-        // Append the new row to the table
-        itemTableBody.appendChild(newRow);
+            // Create a new row for the item
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <th scope="row">${itemCounter}</th>
+                <td><input type="text" class="form-control" name="item_name[]"></td>
+                <td><input type="text" class="form-control" name="item_description[]"></td>
+                <td><input type="text" class="form-control" name="item_unit[]"></td>
+                <td><input type="text" class="form-control" name="item_quantity[]"></td>
+                <td><input type="text" class="form-control" name="item_price[]"></td>
+            `;
 
-        // Increment the item counter
-        itemCounter++;
-    }
+            // Append the new row to the table
+            itemTableBody.appendChild(newRow);
 
-    // Bind the click event to the "Add Item" button
-    $(document).ready(function () {
-        $(".add-new").click(function () {
-            addNewItem();
+            // Increment the item counter
+            itemCounter++;
+        }
+
+        // Bind the click event to the "Add Item" button
+        $(document).ready(function () {
+            $(".add-new").click(function () {
+                addNewItem();
+            });
         });
-    });
-</script>
-  
-<script>
-  $(document).ready(function () {
-              // Add department when the "Add Department" button is clicked
-              $("#addDepartmentBtn").click(function () {
-                  // Get the new department name from the input field
-                  var newDepartment = $("#newDepartment").val();
-  
-                  // Check if the user entered a department name and it's not empty
-                  if (newDepartment.trim() !== "") {
-                      // Add the new department as an option in the select element
-                      $("#departmentDropdown").append('<option>' + newDepartment + '</option>');
-  
-                      // Clear the input field
-                      $("#newDepartment").val("");
-                  }
-              });
-  
-          });
-  </script>
+      </script>
+      
+      <script>
+        $(document).ready(function () {
+          // Add department when the "Add Department" button is clicked
+          $("#addDepartmentBtn").click(function () {
+              // Get the new department name from the input field
+              var newDepartment = $("#newDepartment").val();
 
-  <script>
-    function showConfirmationPopup() {
-      document.getElementById('confirmationPopup').style.display = 'block';
-    }
-  
-    function hideConfirmationPopup() {
-      document.getElementById('confirmationPopup').style.display = 'none';
-    }
-  </script>
+              // Check if the user entered a department name and it's not empty
+              if (newDepartment.trim() !== "") {
+                  // Add the new department as an option in the select element
+                  $("#departmentDropdown").append('<option>' + newDepartment + '</option>');
+
+                  // Clear the input field
+                  $("#newDepartment").val("");
+              }
+          });
+        });
+      </script>
+
+      <script>
+        function showConfirmationPopup() {
+          document.getElementById('confirmationPopup').style.display = 'block';
+        }
+
+        function hideConfirmationPopup() {
+          document.getElementById('confirmationPopup').style.display = 'none';
+        }
+      </script>
+ </body>
 </html>
