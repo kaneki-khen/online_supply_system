@@ -116,3 +116,6 @@ def profile(request):
 
 def signout(request):
     pass
+
+def director_requester(request):
+    return render(request, 'accounts/Admin/director_requester.html')

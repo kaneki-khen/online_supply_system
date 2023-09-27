@@ -84,7 +84,10 @@ body {
   font-weight: var(--bs-body-font-weight);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
- 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
  
   /* Background */
   background-image: url("/static/images/ctu_loogo.png");
@@ -365,11 +368,13 @@ flex-direction: row;
   height: 30px;
   width: 30px;
 }
-footer{
-  background-color: #6C757D; 
-  content-visibility: auto;
-
-
+.footer {
+  background-color:#6C757D;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
 
   -webkit-user-modify: read-write;
   height: 40px;
@@ -382,4 +387,28 @@ footer{
   align-content: center;
   justify-content: space-evenly;
   padding: 17px !important;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+.popup-close {
+  direction: rtl;
+  display: block;
+}
+label {
+  display: inline-block;
+  padding-top: 1rem;
+}
+.requestrecords{
+  width: 150vh;
+  padding: 0% !important;
 }
