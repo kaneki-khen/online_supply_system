@@ -15,6 +15,7 @@
 
   </head>
   <body>
+    <main class="flex-shrink">
     <div id="page-content-wrapper ">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <img class="ctu_logo mx-3" src="{% static 'images/ctu_loogo.png' %}" alt="CTU LOGO">
@@ -36,11 +37,19 @@
       <div class="sidebar">
         <div class=" bg-white" id="sidebar-wrapper">
           <div class="list-group">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
+            <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3 border-0" href="{% url 'notification' %}">Home</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
               <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
             </a>
@@ -159,7 +168,12 @@
         </div>
       </div> 
     </div> 
-    
+  </main>
+  <footer>
+    <div class="footer">
+
+    </div>
+  </footer>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
