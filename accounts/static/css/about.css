@@ -306,31 +306,123 @@ flex-direction: row;
         p {
           text-align: center;
         }
-        footer {
-          padding-top: 50px;
-          box-sizing: border-box;
-        }
-        .container {
-          width: 1140px;
-          margin:auto;
-          display: flex;
-        }
-        .footer {
-          width: 33..3%;
-        }
-        h3{
-          font-size: 20px;
-          margin-bottom: 15px;
+        h5 {
+          font-size: 30px;
+          margin-top: 20px;
           text-align: center;
-          color: white;
-        }
-        .footer-content p{
-          width: 190px;
-          margin: auto;
-          padding: 7px;
-
-        } 
+          font-family: serif,bold;
         
+          
+      }
+      p {
+        text-align: center;
+      }
+      .footer-columns {
+        display: flex;
+       justify-content:space-evenly;
+        margin-top: 20px;
+        padding: 20px;
+ }
+ 
+ footer {
+ max-width: 900px; /* Adjust the value as needed */
+ margin: 0 auto;
+ padding: 1000px 0;
+ border-radius: 0x;
+ margin-bottom: 40px;
+ width: 100%;
+ background: linear-gradient(128.43deg, rgba(0, 53, 102, 0.92) 43.98%, rgba(0, 53, 102, 0.899983) 49.22%, rgba(0, 53, 102, 0.867118) 54.74%, rgba(0, 53, 102, 0.845939) 57.59%, rgba(0, 53, 102, 0.7636) 63.96%, rgba(0, 53, 102, 0) 170.25%) !important;;
+ 
+ }
+ footer {
+         background-color: blue; 
+         color: #fff; 
+         padding: 20px 0; 
+     }
+
+     footer h5 {
+         font-size: 18px;
+         color: #fff;
+     }
+
+     footer ul {
+         list-style: none;
+         padding: 0;
+     }
+
+     footer ul li {
+         margin-bottom: 10px;
+     } 
+
+     footer a {
+         color: #fff;
+         text-decoration: none;
+     }
+
+     footer a:hover {
+         text-decoration: underline;
+     }
+     footer p {
+       color: #fff;
+     }
+     .center-icons {
+text-align: center; /* Horizontally center-align the content */
+}
+
+.center-icons ul {
+list-style: none;
+padding: 0;
+}
+
+.center-icons ul li {
+display: inline-block; /* Display the icons in a row */
+margin-right: 10px; /* Add some spacing between icons (adjust as needed) */
+vertical-align: middle; /* Vertically center-align the icons */
+}
+.col-md-4 {
+ text-align: center; /* Center-align the text and icons */
+}
+
+/* Style the social media icons */
+.col-md-4 ul.list-unstyled {
+ list-style: none;
+ padding: 0;
+}
+
+.col-md-4 ul.list-unstyled li {
+ display: inline-block; /* Display icons in a row */
+ margin-right: 10px; /* Add spacing between icons (adjust as needed) */
+ font-size: 24px; /* Adjust the icon size */
+}
+
+.col-md-4 ul.list-unstyled li a {
+ text-decoration: none; 
+ color: #007bff;
+}
+
+.col-md-4 ul.list-unstyled li a:hover {
+ color: #0056b3;
+}
+.rectangle-23,
+.rectangle-23 * {
+box-sizing: border-box;
+width: 100%;
+height: 20px;
+}
+.rectangle-23 {
+
+background: #6c757d;
+border-style:solid;
+border-color: #6c757d;
+border-width: 5px;
+width: 10000;
+height: 30px;
+position: fixed;
+margin-top: 0;
+left: 1
+
+}   
+
 
 
 
