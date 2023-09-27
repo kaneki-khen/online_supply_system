@@ -36,11 +36,19 @@
         <div class="sidebar">
           <div class=" bg-white" id="sidebar-wrapper">
             <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Home</a>
+              <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3 border-0" href="#!">Home</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
               </a>
@@ -98,10 +106,10 @@
         class="container justify-content-end align-items-baseline">
           Total Amount: _______________
           <a href="#" onclick="showConfirmationPopup()">
-            <img src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
+            <img class="cart_image" src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
           </a>
           <div id="confirmationPopup" class="popup">
-            <span class="popup-close" onclick="hideConfirmationPopup()">X</span>
+            <span class="popup-close" onclick="hideConfirmationPopup()" justify-content-end >X</span>
             <h2>Purchase Request Confirmation</h2>
             <!-- Add your confirmation content here -->
             <p>Your purchase request has been received and is being processed.</p>
@@ -112,6 +120,11 @@
       <div>
     </div> 
     </main>
+    <footer>
+      <div class="footer">
+
+      </div>
+    </footer>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
