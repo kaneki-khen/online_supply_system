@@ -19,9 +19,9 @@ def home(request):
     declined = status.filter(status='Declined').count()
 
     context = {'requester':requester, 'status': status, 
-               'total_requester':  total_requester,
-               'total_status': total_status,'approved': approved,
-                 'pending': pending,'declined': declined}
+    'total_requester':  total_requester,
+    'total_status': total_status,'approved': approved,
+    'pending': pending,'declined': declined}
 
     return render(request, 'accounts/User/dashboard.html', context)   
 
@@ -35,14 +35,12 @@ def products(request):
     return render(request, 'accounts/User/products.html', {'products': products})
 
 def status(request):
-    
     return render(request, 'accounts/User/status.html') 
 
 def homepage(request):
     return render(request, 'accounts/User/homepage.html')
 
 def register(request):
-
   if request.method == "POST":
     username = request.POST['username']
     fname = request.POST['fname']
@@ -53,10 +51,8 @@ def register(request):
     pass1 = request.POST['pass1']
     pass2 = request.POST['pass2']
 
-    # Check if the passwords match
     if pass1 != pass2:
-      # If the passwords do not match, raise an error
-      raise ValueError("Passwords do not match")
+        raise ValueError("password not match.")
 
     myuser = User.objects.create_user(username, email, pass1)
     myuser.first_name = fname
@@ -86,7 +82,7 @@ def login(request):
         if user is not None:
             auth_login(request, user)  # Use auth_login here to avoid conflicts
             fname = user.first_name
-            return render(request, "accounts/User/requester.html", {'fname': fname})
+            return render(request, "accounts/User/notification.html", {'fname': fname})
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
@@ -96,9 +92,27 @@ def login(request):
 def forgot(request):
     return render(request, 'accounts/User/forgot.html')
 
+def reset(request):
+    return render(request, 'accounts/User/reset.html')
+
+def verify(request):
+    return render(request, 'accounts/User/verify.html')
+
+def about(request):
+    return render(request, 'accounts/User/about.html')
+
+def history(request):
+    return render(request, 'accounts/User/history.html')
+
+def tracker(request):
+    return render(request, 'accounts/User/tracker.html')
+
+def notification(request):
+    return render(request, 'accounts/User/notification.html')
+
+def profile(request):
+    return render(request, 'accounts/User/profile.html')
 
 
 def signout(request):
     pass
-
-

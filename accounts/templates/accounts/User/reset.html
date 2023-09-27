@@ -24,11 +24,18 @@
             <header></header>
             <h1>Reset Password</h1>
             <div class="input-box">
-                <input type="newpassword" placeholder="New Password:" required>
+                <input type="newpassword" placeholder="New Password:" required oninput="maxLengthCheck(this, 10)">
             </div>
             <div class="input-box">
-                <input type="confirmpassword" placeholder="Confirm Password:" required>
+                <input type="confirmpassword" placeholder="Confirm Password:" required oninput="maxLengthCheck(this, 10)">
             </div>
+            <script>
+                function maxLengthCheck(object, maxLength) {
+                    if (object.value.length > maxLength)
+                        object.value = object.value.slice(0, maxLength);
+                }
+                </script>
+
             <button type="reset" class="btn">Reset Password</button>
         </form>
     </div>
