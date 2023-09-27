@@ -34,46 +34,38 @@
         <div class="sidebar">
           <div class=" bg-white" id="sidebar-wrapper">
             <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3  border-0" href="#!">Home</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Home</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
               </a>
             </div>
           </div>
-        </div> 
-
-      <div class="container-fluid">
-        <div class="container">
-          <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
         </div>
-        <form>
-            <div class="form-group mb-3 p-3">
+
+        <div class="container-fluid">
+          <div class="container">
+            <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
+          </div>
+          <form>
+            <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
               <select class="form-control" id="departmentDropdown">
-                <option value="option1">Department 1</option>
-                <option value="option2">Department 2</option>
-                <option value="option3">Department 3</option>
-                <div class="btn"> 
-                  <input type="text" class="form-control" id="newDepartment" placeholder="Enter new department">
-                    <button class="btn btn-info" type="button" id="addDepartmentBtn">Add Department</button>
-                    <!-- Departments will be added here dynamically -->
-                </div>   
+    <option value="option1">Department 1</option>
+    <option value="option2">Department 2</option>
+    <option value="option3">Department 3</option>
+               <input type="text" class="form-control" id="newDepartment" placeholder="Enter new department">
+     
+                  <button class="btn btn-info" type="button" id="addDepartmentBtn">Add Department</button>
+                  <!-- Departments will be added here dynamically -->
               </select>
-                <div id="otherText" style="display: none; padding: 3rem;">
-              <input type="text" id="otherTextInput" placeholder="Others please specify">
-            </div>
+          
+              <div id="otherText" style="display: none;">
+    <input type="text" id="otherTextInput" placeholder="Others please specify">
+  </div>
 
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1">Purpose</label>
@@ -113,16 +105,24 @@
           class="container justify-content-end align-items-baseline">
           Total Amount: _______________
           <a href="#" onclick="showConfirmationPopup()">
-            <img class="cart_image" src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
+            <img src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
           </a>
+          <div id="confirmationPopup" class="popup">
+            <span class="popup-close" onclick="hideConfirmationPopup()">X</span>
+            <h2>Purchase Request Confirmation</h2>
+            <!-- Add your confirmation content here -->
+            <p>Your purchase request has been received and is being processed.</p>
+          </div>
         </div>
       </div>
     </main>
-    <footer>
-      <div class="footer">
-        
-      </div>
-    </footer>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+      // Counter for item numbers
+      let itemCounter = 1;
 
       <!-- JavaScript code -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -160,36 +160,16 @@
             $(".add-new").click(function () {
                 addNewItem();
             });
-        });
-      </script>
-      
-      <script>
-        $(document).ready(function () {
-          // Add department when the "Add Department" button is clicked
-          $("#addDepartmentBtn").click(function () {
-              // Get the new department name from the input field
-              var newDepartment = $("#newDepartment").val();
+    </script>
 
-              // Check if the user entered a department name and it's not empty
-              if (newDepartment.trim() !== "") {
-                  // Add the new department as an option in the select element
-                  $("#departmentDropdown").append('<option>' + newDepartment + '</option>');
-
-                  // Clear the input field
-                  $("#newDepartment").val("");
-              }
-          });
-        });
-      </script>
-
-      <script>
-        function showConfirmationPopup() {
-          document.getElementById('confirmationPopup').style.display = 'block';
-        }
-
-        function hideConfirmationPopup() {
-          document.getElementById('confirmationPopup').style.display = 'none';
-        }
-      </script>
- </body>
+    <script>
+      function showConfirmationPopup() {
+        document.getElementById('confirmationPopup').style.display = 'block';
+      }
+    
+      function hideConfirmationPopup() {
+        document.getElementById('confirmationPopup').style.display = 'none';
+      }
+    </script>
+    
 </html>
