@@ -48,3 +48,12 @@ class Status(models.Model):
     status = models.CharField(max_length=200,null=True, choices=STATUS)
 
 
+from django.db import models
+
+class Item(models.Model):
+    item_no = models.IntegerField()
+    item_name = models.CharField(max_length=255)
+    item_description = models.TextField()
+    unit = models.CharField(max_length=50)
+    quantity = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)

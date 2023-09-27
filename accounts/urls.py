@@ -16,4 +16,5 @@ urlpatterns = [
    path('verify/',views.verify, name='verify'),
    path('about/',views.about, name='about'),
    path('history/',views.history, name='history'),
+   path('item_list/',views.item_list, name='item_list'),
 ]

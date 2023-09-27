@@ -116,3 +116,22 @@ def profile(request):
 
 def signout(request):
     pass
+
+
+from django.shortcuts import render
+from .models import Item  # Import your Item model
+
+def item_list(request):
+    # Retrieve all items from the database
+    items = Item.objects.all()
+
+    # Calculate the total amount by summing up the product of quantity and price for each item
+    total_amount = sum(item.quantity * item.price for item in items)
+
+    # Pass the items and total_amount to your template
+    context = {
+        'items': items,
+        'total_amount': total_amount,
+    }
+
+    return render(request, 'accounts/User/requester.html', context)
