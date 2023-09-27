@@ -317,6 +317,7 @@ flex-direction: row;
       p {
         text-align: center;
       }
+
       .footer-columns {
         display: flex;
        justify-content:space-evenly;
@@ -403,6 +404,8 @@ vertical-align: middle; /* Vertically center-align the icons */
 .col-md-4 ul.list-unstyled li a:hover {
  color: #0056b3;
 }
+
+
 .rectangle-23,
 .rectangle-23 * {
 box-sizing: border-box;
