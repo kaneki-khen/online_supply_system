@@ -400,3 +400,8 @@ flex-direction: row;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
+.popup-close {
+  justify-content: flex-end!important;
+  direction: rtl;
+  display: block;
+}
