@@ -326,7 +326,7 @@ flex-direction: row;
  }
  
  footer {
- max-width: 900px; /* Adjust the value as needed */
+ max-width: 900px; 
  margin: 0 auto;
  padding: 1000px 0;
  border-radius: 0x;
@@ -367,7 +367,7 @@ flex-direction: row;
        color: #fff;
      }
      .center-icons {
-text-align: center; /* Horizontally center-align the content */
+text-align: center; 
 }
 
 .center-icons ul {
@@ -376,24 +376,24 @@ padding: 0;
 }
 
 .center-icons ul li {
-display: inline-block; /* Display the icons in a row */
-margin-right: 10px; /* Add some spacing between icons (adjust as needed) */
-vertical-align: middle; /* Vertically center-align the icons */
+display: inline-block; 
+margin-right: 10px; 
+vertical-align: middle; 
 }
 .col-md-4 {
- text-align: center; /* Center-align the text and icons */
+ text-align: center; 
 }
 
-/* Style the social media icons */
+
 .col-md-4 ul.list-unstyled {
  list-style: none;
  padding: 0;
 }
 
 .col-md-4 ul.list-unstyled li {
- display: inline-block; /* Display icons in a row */
- margin-right: 10px; /* Add spacing between icons (adjust as needed) */
- font-size: 24px; /* Adjust the icon size */
+ display: inline-block; 
+ margin-right: 10px; 
+ font-size: 24px; 
 }
 
 .col-md-4 ul.list-unstyled li a {
