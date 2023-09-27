@@ -36,11 +36,11 @@
         <div class="sidebar">
           <div class=" bg-white" id="sidebar-wrapper">
             <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3 border-0" href="#!">Home</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Purchase Request</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Resolution</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">History</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">About Us</a>
+              <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3 border-0" href="{% url 'notification' %}">Home</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
               <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
@@ -78,7 +78,7 @@
   </div>
 
       <div class="form-group mb-3">
-        <label for="exampleFormcontrolTextarea1">Purpose</label>
+        <label for="exampleFormcontrolTextarea1 p-2">Purpose</label>
         <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3"></textarea>
       </div>
           </form>

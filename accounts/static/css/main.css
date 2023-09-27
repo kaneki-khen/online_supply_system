@@ -401,7 +401,10 @@ flex-direction: row;
   z-index: 1000;
 }
 .popup-close {
-  justify-content: flex-end!important;
   direction: rtl;
   display: block;
+}
+label {
+  display: inline-block;
+  padding-top: 1rem;
 }
