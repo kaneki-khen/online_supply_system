@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">  
@@ -55,6 +56,12 @@
             </div>
           </div>
         </div>
+{% extends 'accounts/User/main.html' %}
+{% load static %}
+  
+{% block content %}
+    
+
 
         <div class="container-fluid">
           <div class="container">
@@ -126,15 +133,7 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div class="footer">
-
-      </div>
-    </footer>
-  </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
   <script>
       // Counter for item numbers
       let itemCounter = 1;
@@ -187,4 +186,4 @@
       }
     </script>
     
-</html>
+{% endblock %}

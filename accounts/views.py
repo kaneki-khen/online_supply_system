@@ -135,3 +135,6 @@ def item_list(request):
     }
 
     return render(request, 'accounts/User/requester.html', context)
+
+def director_requester(request):
+    return render(request, 'accounts/Admin/director_requester.html')
