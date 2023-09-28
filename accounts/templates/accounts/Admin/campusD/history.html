@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">  
@@ -9,6 +8,8 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
       <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
   </head>
@@ -37,13 +38,15 @@
         <div class="sidebar">
           <div class="d-flex flex-wrap align-content-between h-100">
             <div class="bg-white w-100" id="sidebar-wrapper">
-              <div class="list-group w-100">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'dnotification' %}">Home</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'dresolution' %}">Resolution</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
-              </div>
+                <div class="bg-white w-100" id="sidebar-wrapper">
+                    <div class="list-group w-100">
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_notification' %}">Home</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_requester' %}">Purchase Request</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_resolution' %}">Resolution</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_history' %}">History</a>
+                      <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+                    </div>
+                  </div>
             </div>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
               <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
@@ -53,34 +56,19 @@
 
         <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
-            <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
+            <h1 class="pr text-center pt-4">ACTIVITY HISTORY</h1>  
           </div>
-          <div class="row w-100 m-auto border text-center">
-            <div class="col-4">
-              <p>
-                Purchase Request No. 000002
-              </p>
+          <div class="container" style=" display: inline-flex; margin: 3; flex-direction: column;">
+            <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+              <i class="fa fa-circle px-3" aria-hidden="true" style="color: green;"></i>
+              <strong>Successful Requests</strong>
             </div>
-            <div class="col-3">
-              <p>
-                John D.
-              </p>
-            </div>
-            <div class="col-3">
-              <p>
-                27/09/2023
-              </p>
-            </div>
-            <div class="col-2"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="bi bi-eye">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                  <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                </svg>
-              </i>
+            <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
+              <i class="fa fa-circle px-3" aria-hidden="true" style="color: red;"></i>
+              <strong>Failed Requests</strong>
             </div>
           </div>
-          <div class="row w-100 m-auto border text-center">
+          <div class="row w-100 m-auto border text-center text-danger">
             <div class="col-4">
               <p>
                 Purchase Request No. 000001
@@ -93,18 +81,32 @@
             </div>
             <div class="col-3">
               <p>
-                20/09/2023
+                27/09/2023
               </p>
             </div>
             <div class="col-2"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="bi bi-eye">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                  <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                </svg>
-              </i>
+              <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
           </div>
+          <div class="row w-100 m-auto border text-center text-success">
+            <div class="col-4">
+              <p>
+                Purchase Request No. 000002
+              </p>
+            </div>
+            <div class="col-3">
+              <p>
+                John Doe
+              </p>
+            </div>
+            <div class="col-3">
+              <p>
+                28/09/2023
+              </p>
+            </div>
+            <div class="col-2"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -114,26 +116,26 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
-                    <div class="row w-100 m-auto border text-start p-0">
+                    <div class="row w-100 m-auto border text-start p-0 text-dark ">
                       <div class="col-6 border">
                         <p>
                           PR ID:
                         </p>
                       </div>
-                      <div class="col-6 border">
+                      <div class="col-6 border text-dark text-start">
                         <p>
                           Requester ID:
                         </p>
                       </div>
                   </div>
-                    <div class="row w-100 m-auto border">
+                    <div class="row w-100 m-auto border text-dark text-start">
                       <div class="col-12">
                         <p>
                           Department:
                         </p>
                       </div>
                   </div>
-                    <div class="row w-100 m-auto border">
+                    <div class="row w-100 m-auto border text-dark text-start">
                       <div class="col-12">
                         <p>
                           Purpose:
@@ -165,18 +167,10 @@
                   Total Amount:_______</div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="decline_request()">
-                    <i class="bi bi-x-circle"></i>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                    </svg>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                   </button>
                   <button type="button" class="btn btn-success" onclick="approve_request()">
-                    <i class="bi bi-check-circle"></i>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                    </svg>
+                    <i class="fa fa-check" aria-hidden="true"></i>
                   </button>
                 </div>
             </div>
@@ -194,43 +188,3 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <script>
-    function approve_request(){
-      Swal.fire({
-        icon: 'success',
-        title: 'You approved the request!',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-      })
-    }
-    function decline_request() {
-      Swal.fire({
-          input: 'textarea',
-          text: 'If you want to continue in declining this request, please state your reason',
-          inputPlaceholder: 'Type your message here...',
-          inputAttributes: {
-            'aria-label': 'Type your message here'
-          },
-          confirmButtonText: 'Done',
-          showCancelButton: true
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire({
-              title: 'Message Sent!',
-              text: 'Your message has been sent to the requester.',
-              icon: 'success',
-              timer: 2000,
-              timerProgressBar: true,
-              showConfirmButton: false
-            })
-          }
-        })
-
-        if (text) {
-          Swal.fire(text)
-        }
-    }
-    </script>
-  </html>

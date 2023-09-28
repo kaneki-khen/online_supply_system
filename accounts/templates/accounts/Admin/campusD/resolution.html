@@ -39,10 +39,10 @@
           <div class="d-flex flex-wrap align-content-between h-100">
             <div class="bg-white w-100" id="sidebar-wrapper">
               <div class="list-group w-100">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_notification' %}">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_requester' %}">Purchase Request</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_resolution' %}">Resolution</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'campusD_history' %}">History</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
               </div>
             </div>
@@ -52,32 +52,17 @@
           </div>
         </div>
 
-        <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; ">
+        <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden;">
           <div class="container">
-            <h1 class="pr text-center pt-4">HISTORY ON REQUEST PURCHASES</h1>  
+            <h1 class="pr text-center pt-4">RESOLUTION</h1>  
           </div>
-          <div class="container" style=" display: inline-flex; margin: 3; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
-              <i class="fa fa-circle px-3" aria-hidden="true" style="color: green;"></i>
-              <strong>Successful Requests</strong>
-            </div>
-            <div style="display: flex; align-items: baseline; flex-wrap: nowrap;">
-              <i class="fa fa-circle px-3" aria-hidden="true" style="color: red;"></i>
-              <strong>Failed Requests</strong>
-            </div>
-          </div>
-          <div class="row w-100 m-auto border text-center text-danger">
-            <div class="col-4">
+          <div class="row w-100 m-auto border text-center">
+            <div class="col-7  text-start">
               <p>
-                Purchase Request No. 000001
+                Resolution for Purchase Request No. 000002 is waiting for your aprroval.
               </p>
             </div>
-            <div class="col-3">
-              <p>
-                John Doe
-              </p>
-            </div>
-            <div class="col-3">
+            <div class="col-3  text-center">
               <p>
                 27/09/2023
               </p>
@@ -86,25 +71,21 @@
               <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="row w-100 m-auto border text-center text-success">
-            <div class="col-4">
+          <div class="row w-100 m-auto border text-center">
+            <div class="col-7  text-start">
               <p>
-                Purchase Request No. 000002
+                Resolution for Purchase Request No. 000001 is waiting for your aprroval.
               </p>
             </div>
-            <div class="col-3">
+            <div class="col-3  text-center">
               <p>
-                John Doe
+                20/09/2023
               </p>
             </div>
-            <div class="col-3">
-              <p>
-                28/09/2023
-              </p>
-            </div>
-            <div class="col-2"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="col-2  text-center"  data-bs-toggle="modal" data-bs-target="#exampleModal">
               <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
+          </div>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -113,56 +94,9 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <div class="row">
-                    <div class="row w-100 m-auto border text-start p-0 text-dark ">
-                      <div class="col-6 border">
-                        <p>
-                          PR ID:
-                        </p>
-                      </div>
-                      <div class="col-6 border text-dark text-start">
-                        <p>
-                          Requester ID:
-                        </p>
-                      </div>
-                  </div>
-                    <div class="row w-100 m-auto border text-dark text-start">
-                      <div class="col-12">
-                        <p>
-                          Department:
-                        </p>
-                      </div>
-                  </div>
-                    <div class="row w-100 m-auto border text-dark text-start">
-                      <div class="col-12">
-                        <p>
-                          Purpose:
-                        </p>
-                      </div>
-                  </div>
-                  <table class="table table-bordered table-responsive" id="itemTable">
-                    <thead>
-                        <tr>
-                            <th class="">Item No.</th>
-                            <th class="">Item Name</th>
-                            <th class="">Item Brand/Description</th>
-                            <th class="">Unit</th>
-                            <th class="">Quantity</th>
-                            <th class="">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                        <td>test</td>
-                    </tbody>
-                </table>
                 <div 
-                class="container justify-content-end align-items-baseline">
-                  Total Amount:_______</div>
+                class="container justify-content-center align-items-baseline">
+                  Resolution</div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="decline_request()">
                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -173,9 +107,8 @@
                 </div>
             </div>
           </div>
-       </div>
-      </div> 
-    </main>
+        </div>  
+      </main>
     <footer>
       <div class="footer">
 
@@ -186,3 +119,42 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function approve_request(){
+      Swal.fire({
+        icon: 'success',
+        title: 'You approved the request!',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      })
+    }
+    function decline_request() {
+      Swal.fire({
+          input: 'textarea',
+          text: 'If you want to continue in declining this request, please state your reason',
+          inputPlaceholder: 'Type your message here...',
+          inputAttributes: {
+            'aria-label': 'Type your message here'
+          },
+          confirmButtonText: 'Done',
+          showCancelButton: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: 'Message Sent!',
+              text: 'Your message has been sent to the requester.',
+              icon: 'success',
+              timer: 2000,
+              timerProgressBar: true,
+              showConfirmButton: false
+            })
+          }
+        })
+
+        if (text) {
+          Swal.fire(text)
+        }
+    }
+    </script>
+  </html>

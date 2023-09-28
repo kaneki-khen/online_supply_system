@@ -17,7 +17,10 @@ urlpatterns = [
    path('about/',views.about, name='about'),
    path('history/',views.history, name='history'),
    path('profile/',views.profile, name='profile'),
-   path('drequester/', views.drequester,name='drequester'),
-   path('dnotification/', views.dnotification,name='dnotification'),
-   path('dresolution/', views.dresolution,name='dresolution'),
+   path('campus_director/requester/', views.campus_director_requester,name='campusD_requester'),
+   path('campus_director/notification/', views.campus_director_notification,name='campusD_notification'),
+   path('campus_director/resolution/', views.campus_director_resolution,name='campusD_resolution'),
+   path('campus_director/history/', views.campus_director_history,name='campusD_history'),
+   path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
+   path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
 ]
