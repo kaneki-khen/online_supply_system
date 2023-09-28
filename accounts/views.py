@@ -18,10 +18,15 @@ def home(request):
     pending = status.filter(status='Pending').count()
     declined = status.filter(status='Declined').count()
 
-    context = {'requester':requester, 'status': status, 
-    'total_requester':  total_requester,
-    'total_status': total_status,'approved': approved,
-    'pending': pending,'declined': declined}
+    context = {
+        'requester':requester, 
+        'status': status, 
+        'total_requester':  total_requester,
+        'total_status': total_status,
+        'approved': approved,
+        'pending': pending,
+        'declined': declined
+    }
 
     return render(request, 'accounts/User/dashboard.html', context)   
 
