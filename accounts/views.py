@@ -117,5 +117,11 @@ def profile(request):
 def signout(request):
     pass
 
-def director_requester(request):
-    return render(request, 'accounts/Admin/director_requester.html')
+def drequester(request):
+    return render(request, 'accounts/Admin/campusD/drequester.html')
+
+def dnotification(request):
+    return render(request, 'accounts/Admin/campusD/dnotification.html')
+
+def dresolution(request):
+    return render(request, 'accounts/Admin/campusD/dresolution.html')
