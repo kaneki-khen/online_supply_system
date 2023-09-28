@@ -42,7 +42,7 @@ body{
 
 .wrapper {
     width: 380px;
-    height: 700px;
+    height: 695px;
     background: rgba(255, 255, 255, 0.486);
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
     color: #003566;
@@ -94,18 +94,18 @@ body{
 }
 
 .wrapper .btn {
-    width: 30%;
-    height: 20px;
+    width: 40%;
+    height: 30px;
     background: #F48C06;
-    border: 0.5px solid black;
+    border: 1px solid black;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     color: black;
     font-weight: 250;
-    font-size: 13px;
-    margin-left: 72%;
+    font-size: 14px;
+    margin-left: 62.1%;
     text-align: center;
     line-height: 8px;
 }
