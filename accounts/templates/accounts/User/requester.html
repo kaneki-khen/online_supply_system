@@ -95,30 +95,23 @@
       <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <div class="sidebar">
-          <div class=" bg-white" id="sidebar-wrapper">
-            <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-light pt-5 pb-3 border-0" href="{% url 'notification' %}">Home</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
-                <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
-              </a>
+          <div class="d-flex flex-wrap align-content-between h-100">
+            <div class="bg-white w-100" id="sidebar-wrapper">
+              <div class="list-group w-100">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+              </div>
             </div>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
+              <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
+            </a>
           </div>
         </div>
 
-
-        <div class="container-fluid">
+        <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
             <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
           </div>
@@ -126,27 +119,21 @@
             <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
               <select class="form-control" id="departmentDropdown">
-    <option value="option1">Department 1</option>
-    <option value="option2">Department 2</option>
-    <option value="option3">Department 3</option>
-               <input type="text" class="form-control" id="newDepartment" placeholder="Enter new department">
-     
-                  <button class="btn btn-info" type="button" id="addDepartmentBtn">Add Department</button>
-                  <!-- Departments will be added here dynamically -->
+                  <option value="option1">College of Arts and Sciences</option>
+                  <option value="option2">College of Agriculture</option>
+                  <option value="option3">College of Forestry</option>
+                  <option value="option3">College of Hospitality Management and Tourism</option>
+                  <option value="option3">College of Technology and Engineering</option>
+                  <option value="option3">College of Education</option>
+                  <option value="option3">Graduate School</option>
+                  <option value="option4">  Others please specify:</option>
               </select>
-          
-              <div id="otherText" style="display: none;">
-    <input type="text" id="otherTextInput" placeholder="Others please specify">
-  </div>
 
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1 p-2">Purpose</label>
         <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3"></textarea>
       </div>
           </form>
-          <div class="text-start my-2">
-            <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
-          </div>
           <div class="container">
             <table class="table table-bordered table-responsive">
               <thead>
@@ -173,6 +160,9 @@
               </tbody>
             </table>
           </div>
+        <div class="text-start my-2">
+          <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
+        </div>
         <div 
           class="container justify-content-end align-items-baseline">
           Total Amount: _______________
