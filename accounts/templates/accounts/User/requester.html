@@ -70,7 +70,10 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="{% static 'js/scripts.js' %}"></script>
   </head>
   <body>
     <main class="flex-shrink">
@@ -189,14 +192,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
       // Counter for item numbers
-      let itemCounter = 1;
+      let item_Counter = 1;
 
-      <!-- JavaScript code -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="{% static 'js/scripts.js' %}"></script>
-      <script>
+  
         // Counter for item numbers
         let itemCounter = 1;
 
@@ -218,15 +216,15 @@
             // Append the new row to the table
             itemTableBody.appendChild(newRow);
 
-            // Increment the item counter
+            // Increment the item counter 
             itemCounter++;
         }
 
         // Bind the click event to the "Add Item" button
-        $(document).ready(function () {
+        $(document).readyfunction() 
             $(".add-new").click(function () {
                 addNewItem();
-            });
+            })
     </script>
 
     <script>
