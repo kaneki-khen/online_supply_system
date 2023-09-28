@@ -11,8 +11,107 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
       <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
   </head>
+  <style>
+    .wrapper {
+       width: 330px;
+       font-family: 'Helvetica';
+       font-size: 14px;
+    }
+     .StepProgress {
+       position: relative;
+       padding-left: 45px;
+       list-style: none;
+    }
+     .StepProgress::before {
+       display: inline-block;
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 15px;
+       width: 10px;
+       height: 100%;
+    }
+     .StepProgress-item {
+       position: relative;
+       counter-increment: list;
+    }
+     .StepProgress-item:not(:last-child) {
+       padding-bottom: 20px;
+    }
+     .StepProgress-item::before {
+       display: inline-block;
+       content: '';
+       position: absolute;
+       left: -30px;
+       height: 100%;
+       width: 10px;
+    }
+     .StepProgress-item::after {
+       content: '';
+       display: inline-block;
+       position: absolute;
+       top: 0;
+       left: -40px;
+       width: 25px;
+       height: 25px;
+       border: 2px solid #CCC;
+       border-radius: 50%;
+       background-color: #FFF;
+    }
+     .StepProgress-item.is-done::before {
+       border-left: 2px solid green;
+    }
+     .StepProgress-item.is-done::after {
+       content: "😀";
+       font-size: 13px;
+       color: #FFF;
+       text-align: center;
+       border: 2px solid green;
+       background-color: green;
+    }
+    .StepProgress-item.is-pending::before {
+       border-left: 2px solid orange;
+    }
+     .StepProgress-item.is-pending::after {
+       content: "⏰";
+       font-size: 13px;
+       color: #FFF;
+       text-align: center;
+       border: 2px solid orange;
+       background-color: orange;
+    }
+    .StepProgress-item.is-declined::before {
+       border-left: 2px solid red;
+    }
+     .StepProgress-item.is-declined::after {
+       content: "😥";
+       font-size: 13px;
+       color: #FFF;
+       text-align: center;
+       border: 2px solid red;
+       background-color: red;
+    }
+     .StepProgress-item.current::before {
+       border-left: 2px solid green;
+    }
+     .StepProgress-item.current::after {
+       content: "";
+       padding-top: 1px;
+       width: 25px;
+       height: 25px;
+       top: -4px;
+       left: -40px;
+       font-size: 14px;
+       text-align: center;
+       color: green;
+       border: 2px solid green;
+       background-color: green;
+    }
+     .StepProgress strong {
+       display: block;
+    }
+    </style>
   <body>
     <main class="flex-shrink">
       <div id="page-content-wrapper ">
@@ -102,15 +201,20 @@
                         <p class="form-group py-3">Purchase Request No. 000001</p>
                       </div>
                     </div>
-                    <div class="row text-center">
-                      <div class="col-3 ">
-                        <p class="form-group">Currently</p>
-                      </div>
-                      <div class="col-2 ">
-                        <p class="form-group">diko kibaw ari</p>
-                      </div>
-                      <div class="col-7">
-                        <p class="form-group">Waiting for the BAC Secretariat to create a Resolution.</p>
+                    <div class="mt-4 ms-4">
+                      <div class="wrapper">
+                      <ul class="StepProgress">
+                        <div class="StepProgress-item is-pending"><strong>Waiting for the BAC Secretariat to create a Resolution.</strong>
+                          Currently
+                        </div>
+                        <div class="StepProgress-item is-done"><strong>Campus Director has approved your request.</strong>
+                          1 hr ago
+                        </div>
+                        <div class="StepProgress-item is-declined"><strong>Budget Officer has approved your request.</strong>
+                          09/02/23
+                        </div>
+                        <div class="StepProgress-item current"><strong>Received Item</strong></div>
+                      </ul>
                       </div>
                     </div>
                 </div> 
