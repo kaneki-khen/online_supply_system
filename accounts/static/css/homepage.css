@@ -1,4 +1,10 @@
 body {
+    background: url(school.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure body covers the entire viewport height */
     margin: 0px;
     padding: 0px;
     box-sizing:border-box;
