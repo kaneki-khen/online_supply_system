@@ -19,4 +19,7 @@ urlpatterns = [
    path('profile/',views.profile, name='profile'),
    path('director_requester', views.director_requester,name='director_requester'),
    path('cash/',views.cash, name='cash'),
+   path('drequester/', views.drequester,name='drequester'),
+   path('dnotification/', views.dnotification,name='dnotification'),
+   path('dresolution/', views.dresolution,name='dresolution'),
 ]

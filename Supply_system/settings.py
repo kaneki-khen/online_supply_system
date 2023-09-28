@@ -76,16 +76,21 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-
-
-#shiela database
+# defaultdb
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'inventorydb',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
     }
 }
+
+#shiela database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'inventorydb',
+#     }
+# }
 
 # # jelyn database
 # DATABASES = {
