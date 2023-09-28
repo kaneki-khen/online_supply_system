@@ -19,9 +19,9 @@ def home(request):
     declined = status.filter(status='Declined').count()
 
     context = {
-        'requester':requester, 
+        'requester': requester, 
         'status': status, 
-        'total_requester':  total_requester,
+        'total_requester': total_requester,
         'total_status': total_status,
         'approved': approved,
         'pending': pending,
