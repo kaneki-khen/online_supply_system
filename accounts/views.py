@@ -130,5 +130,9 @@ def director_requester(request):
     return render(request, 'accounts/Admin/director_requester.html')
 
 
+def cash(request):
+    return render(request, 'accounts/Accounting/cash.html')
+
+
 def signout(request):
     pass
