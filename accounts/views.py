@@ -126,13 +126,14 @@ def profile(request):
     return render(request, 'accounts/User/profile.html')
 
 
-def director_requester(request):
-    return render(request, 'accounts/Admin/director_requester.html')
-
-
-def cash(request):
-    return render(request, 'accounts/Accounting/cash.html')
-
-
 def signout(request):
     pass
+
+def drequester(request):
+    return render(request, 'accounts/Admin/campusD/drequester.html')
+
+def dnotification(request):
+    return render(request, 'accounts/Admin/campusD/dnotification.html')
+
+def dresolution(request):
+    return render(request, 'accounts/Admin/campusD/dresolution.html')
