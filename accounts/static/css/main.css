@@ -332,3 +332,11 @@ label {
   padding: 0% !important;
 
 }
+.row {
+  font-size: 16px;
+}
+
+i.bi-circle-fill {
+  font-size: 20px;
+  font-weight: bold;
+}
