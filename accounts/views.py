@@ -129,12 +129,20 @@ def profile(request):
 def signout(request):
     pass
 
-def drequester(request):
-    return render(request, 'accounts/Admin/campusD/drequester.html')
+def campus_director_requester(request):
+    return render(request, 'accounts/Admin/campusD/requester.html')
 
-def dnotification(request):
-    return render(request, 'accounts/Admin/campusD/dnotification.html')
+def campus_director_notification(request):
+    return render(request, 'accounts/Admin/campusD/notification.html')
 
-def dresolution(request):
-    return render(request, 'accounts/Admin/campusD/dresolution.html')
+def campus_director_resolution(request):
+    return render(request, 'accounts/Admin/campusD/resolution.html')
 
+def campus_director_history(request):
+    return render(request, 'accounts/Admin/campusD/history.html')
+
+def supply_office_notification(request):
+    return render(request, 'accounts/Admin/Supply_office/notification.html')
+
+def supply_office_history(request):
+    return render(request, 'accounts/Admin/Supply_office/history.html')
