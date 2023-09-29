@@ -39,12 +39,12 @@
             <div class="sidebar">
             <div class="d-flex flex-wrap align-content-between h-100">
                 <div class="bg-white w-100" id="sidebar-wrapper">
-                <div class="list-group w-100">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_notification' %}">Home</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Inventory</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_history' %}">History</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
-                </div>
+                    <div class="list-group w-100">
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_notification' %}">Home</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Inventory</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_history' %}">History</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_about' %}">About Us</a>
+                    </div>
                 </div>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
@@ -53,9 +53,9 @@
             </div>
 
             <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; ">
-            <div class="container">
-                <h1 class="pr text-center pt-4">HISTORY</h1>  
-            </div>
+                <div class="container">
+                    <h1 class="pr text-center pt-4">HISTORY</h1>  
+                </div>
                 <div class="row w-100 m-auto border text-center">
                     <div class="col-4  text-start">
                         <p>
