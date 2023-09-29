@@ -297,7 +297,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   background-color:#6C757D;
   text-align: center;
   width: 100%;
-  position: sticky;
+  height: auto;
   bottom: 0;
   -webkit-user-modify: read-write;
 }
