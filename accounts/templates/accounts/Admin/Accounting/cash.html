@@ -9,7 +9,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="{% static 'css/cash.css' %}">
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
   </head>
   <body>
@@ -59,12 +59,19 @@
             </div>
           </div>
         </div>
+      
+    
+        <div class="row w-100 m-auto border text-start text-dark" style="border: 1px solid black !important; border-bottom: none !important; margin-top: 2rem !important; ">
+          <div class="col-12">
+            <p>
+              Purchase Request No. 000003 is waiting for you.
+            </p>
+            <p>1 hr ago</p>
+          </div>
+        </div>  
 
     <div class="fund">
-        <h3>CASH DISBURSEMENT</h3>
-    </div>
-    <div class="dropdown-content">
-        <h1>Purchase Request <a href="#"> 00000003</a> is waiting for you.</h1>
+        <h3> <img class="notiff" src="{% static 'images/bell.png' %}" alt="">CASH DISBURSEMENT</h3>
     </div>
 </body>  
 </html>  

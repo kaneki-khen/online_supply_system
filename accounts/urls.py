@@ -17,6 +17,7 @@ urlpatterns = [
    path('about/',views.about, name='about'),
    path('history/',views.history, name='history'),
    path('profile/',views.profile, name='profile'),
+   path('cash/',views.cash, name='cash'),
    path('campus_director/requester/', views.campus_director_requester,name='campusD_requester'),
    path('campus_director/notification/', views.campus_director_notification,name='campusD_notification'),
    path('campus_director/resolution/', views.campus_director_resolution,name='campusD_resolution'),

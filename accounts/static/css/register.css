@@ -5,6 +5,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+
 body{
     display: flex;
     justify-content: center;
@@ -24,11 +25,6 @@ body{
         z-index: -1;
 }
 
-.logo {
-    width: 20px;
-    height: 20px;
-    align-items: center;
-}
 
 .title{
     position: absolute;
@@ -40,30 +36,22 @@ body{
     margin-right: 80px;
 }
 
+
 .wrapper {
     width: 380px;
-    height: 695px;
+    height: 710px;
     background: rgba(255, 255, 255, 0.486);
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
     color: #003566;
-    padding: 80px 50px;
+    padding: 50px 40px;
     padding-right: 60px;
     border-style: solid;
     border-width: 2px;
     position: absolute;
     left: 1100px;
-    top: 150px;
+    top: 110px;
 }
 
-.wrapper .register_icon {
-    position: relative;
-    bottom: 20px;
-    right: 20;
-    width: 18%;
-    height: 18%;
-    display: block;
-    margin: 0 auto;
-}
 
 .wrapper h1 {
     font-size: 34px;
@@ -72,6 +60,7 @@ body{
     margin-bottom: 35px;
 }
 
+
 .wrapper .input-box {
     position: relative;
     width: 270px;
@@ -79,6 +68,7 @@ body{
     background: rgba(255, 255, 255, 0.486);;
     margin: 15px auto;
 }
+
 
 .input-box input {
     width: 270px;
@@ -93,6 +83,7 @@ body{
     box-shadow: 0 0 3px black;
 }
 
+
 .wrapper .btn {
     width: 40%;
     height: 30px;
@@ -105,11 +96,44 @@ body{
     color: black;
     font-weight: 250;
     font-size: 14px;
-    margin-left: 62.1%;
+    margin-left: 59.8%;
     text-align: center;
     line-height: 8px;
 }
 
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
 .wrapper .btn:hover{
     color: white;
+}
+
+
+.wrapper .login-link {
+    font: 14px;
+    color: black;
+    text-align: center;
+    margin-top: 10%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20%;
+}
+
+
+.login-link p a {
+    font-size: 14px;
+    font-weight: 200;
+    color: black;
+    text-decoration: underline;
+}
+
+
+.login-link p a:hover {
+    text-decoration: underline;
+    color: #007bff;
 }
