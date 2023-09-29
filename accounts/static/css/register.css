@@ -5,6 +5,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+
 body{
     display: flex;
     justify-content: center;
@@ -35,6 +36,7 @@ body{
     margin-right: 80px;
 }
 
+
 .wrapper {
     width: 380px;
     height: 710px;
@@ -51,13 +53,13 @@ body{
 }
 
 
-
 .wrapper h1 {
     font-size: 34px;
     text-align: center;
     margin-top: 0;
     margin-bottom: 35px;
 }
+
 
 .wrapper .input-box {
     position: relative;
@@ -66,6 +68,7 @@ body{
     background: rgba(255, 255, 255, 0.486);;
     margin: 15px auto;
 }
+
 
 .input-box input {
     width: 270px;
@@ -79,6 +82,7 @@ body{
     padding: 10px;
     box-shadow: 0 0 3px black;
 }
+
 
 .wrapper .btn {
     width: 40%;
@@ -97,15 +101,18 @@ body{
     line-height: 8px;
 }
 
+
 .icon-container{
     display: flex;
     justify-content: center;
     align-items: center;
     }
 
+
 .wrapper .btn:hover{
     color: white;
 }
+
 
 .wrapper .login-link {
     font: 14px;
@@ -117,12 +124,14 @@ body{
     margin-left: 20%;
 }
 
+
 .login-link p a {
     font-size: 14px;
     font-weight: 200;
     color: black;
     text-decoration: underline;
 }
+
 
 .login-link p a:hover {
     text-decoration: underline;
