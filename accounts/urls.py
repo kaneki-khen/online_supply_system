@@ -22,6 +22,7 @@ urlpatterns = [
    path('campus_director/resolution/', views.campus_director_resolution,name='campusD_resolution'),
    path('campus_director/history/', views.campus_director_history,name='campusD_history'),
    path('campus_director/about/', views.campus_director_about,name='campusD_about'),
+   path('supply_office/home/', views.supply_office_home,name='supply_office_home'),
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
    path('supply_office/about/', views.supply_office_about,name='supply_office_about'),

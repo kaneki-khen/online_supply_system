@@ -144,6 +144,10 @@ def campus_director_history(request):
 def campus_director_about(request):
     return render(request, 'accounts/Admin/campusD/about.html')
 
+def supply_office_home(request):
+    return render(request, 'accounts/Admin/Supply_office/home.html')
+
+
 def supply_office_notification(request):
     return render(request, 'accounts/Admin/Supply_office/notification.html')
 

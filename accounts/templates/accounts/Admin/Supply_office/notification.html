@@ -39,11 +39,11 @@
           <div class="d-flex flex-wrap align-content-between h-100">
             <div class="bg-white w-100" id="sidebar-wrapper">
               <div class="list-group w-100">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_notification' %}">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_home' %}">Home</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Inventory</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_history' %}">History</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_about' %}">About Us</a>
-            </div>
+              </div>
             </div>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
               <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
@@ -51,32 +51,18 @@
           </div>
         </div>
 
-        <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; width: 100%;">
-            <div class="row row w-100 m-auto">
-              <div class="col-10">
-                <h1 class="pr text-center pt-4">PURCHASE REQUESTS</h1>
-              </div>
-              <div class="col-2 p-3" style="display: flex; flex-direction: row; flex-wrap: nowrap; align-content: flex-end; justify-content: flex-end; align-items: center;">
-                <img src="{% static 'images/bell.png' %}" alt="Bell">
-              </div>
-            </div>
-            
-          
-          <div class="row w-100 m-auto border text-start text-dark" style=" margin-top: 2rem !important; ">
-            <div class="row w-100 m-auto border" style= "border: 1px solid black !important; border-bottom: none !important;">
-              <div class="col-12">
-                <p>
-                  Purchase Request No. 000002
-                </p>
-              </div>
-            </div> 
-            <div class="row w-100 m-auto border" style="border: 1px solid black !important;">
-              <div class="col-12">
-                <p>
-                  Purchase Request No. 000001
-                </p>
-              </div>
-            </div>   
+        <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden;">
+          <div class="container">
+            <h1 class="pr text-center pt-4"><img src="{% static 'images/bell.png' %}" alt="Bell">NOTIFICATIONS</h1>  
+          </div>
+          <div class="row w-100 m-auto border text-start text-dark" style="border: 1px solid black !important; margin-top: 2rem !important; ">
+            <div class="list-group w-100">
+              <a class="list-group-item list-group-item-action list-group-item-light p-2" href="#!"><p class="form-group">
+                Purchase Request No. 000002 has been disbursed.
+              </p></a>
+              <a class="list-group-item list-group-item-action list-group-item-light p-2 " href="#!"><p class="form-group">
+                Purchase Request No. 000001 has been received by the requester. 
+              </p></a>
           </div>  
         </div>  
       </main>

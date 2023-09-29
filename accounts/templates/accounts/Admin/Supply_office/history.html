@@ -40,11 +40,11 @@
             <div class="d-flex flex-wrap align-content-between h-100">
                 <div class="bg-white w-100" id="sidebar-wrapper">
                     <div class="list-group w-100">
-                        <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_notification' %}">Home</a>
+                        <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_home' %}">Home</a>
                         <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">Inventory</a>
                         <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_history' %}">History</a>
                         <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'supply_office_about' %}">About Us</a>
-                    </div>
+                      </div>
                 </div>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
                 <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
@@ -52,7 +52,7 @@
             </div>
             </div>
 
-            <div class="container-fluid" style=" height: 70vh; overflow-y: auto; overflow-x: hidden; ">
+            <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
                 <div class="container">
                     <h1 class="pr text-center pt-4">HISTORY</h1>  
                 </div>
@@ -106,37 +106,38 @@
                                         </div>
                                     </div>
                                 </div>    
-                            <table class="table table-bordered table-responsive" id="itemTable">
-                                <thead>
-                                    <tr>
-                                        <th class="">Item No.</th>
-                                        <th class="">Item Name</th>
-                                        <th class="">Item Brand/Description</th>
-                                        <th class="">Unit</th>
-                                        <th class="">Quantity</th>
-                                        <th class="">Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <td>1</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                </tbody>
-                            </table>
-                            <div 
-                                class="container justify-content-end align-items-baseline">
-                                Total Amount:_______
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="decline_request()">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </button>
-                                <button type="button" class="btn btn-success" onclick="approve_request()">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </button>
+                                <table class="table table-bordered table-responsive" id="itemTable">
+                                    <thead>
+                                        <tr>
+                                            <th class="">Item No.</th>
+                                            <th class="">Item Name</th>
+                                            <th class="">Item Brand/Description</th>
+                                            <th class="">Unit</th>
+                                            <th class="">Quantity</th>
+                                            <th class="">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>1</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                    </tbody>
+                                </table>
+                                <div 
+                                    class="container justify-content-end align-items-baseline">
+                                    Total Amount:_______
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="decline_request()">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-success" onclick="approve_request()">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
