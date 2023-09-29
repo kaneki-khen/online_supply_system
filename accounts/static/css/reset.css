@@ -37,7 +37,7 @@ body{
 
 .wrapper {
     width: 380px;
-    height: 375px;
+    height: 385px;
     background: rgba(255, 255, 255, 0.486);
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
     color: #003566;
@@ -49,6 +49,13 @@ body{
     left: 1100px;
     top: 300px;
 }
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
 
 .wrapper .reset_icon {
     position: relative;

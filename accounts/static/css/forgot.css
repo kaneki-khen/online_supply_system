@@ -42,7 +42,7 @@ body {
 
 .wrapper {
     width: 380px;
-    height: 345px;
+    height: 370px;
     background: rgba(255, 255, 255, 0.486);
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
     color: #003566;
@@ -54,6 +54,13 @@ body {
     left: 1100px;
     top: 350px;
 }
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
 
 .wrapper .forgot_icon {
     position: relative;

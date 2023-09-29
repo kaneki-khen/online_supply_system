@@ -24,10 +24,10 @@
     <div class="title">Online Supply System</div>
     
     <div class="wrapper">
-        <div>
-            <img class="reset_icon" src="{% static 'images/reset.png' %}" alt="">
-        <div>
-
+        <div class="icon-container">
+            <img class="login_icon" src="{% static 'images/reset.png' %}" alt="">
+        </div>
+       
         <form action="" method="post">
             
             {%csrf_token%}
@@ -57,7 +57,8 @@
                 }
             </script>
 
-            <button type="submit" class="btn">Reset Password</button>
+            <button type="submit" class="btn">Reset Password </button>
+
         </form>
     </div>
 </body>
