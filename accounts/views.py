@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
-# Create your views here.
 
 
 def home(request):
@@ -90,7 +89,7 @@ def login(request):
         else:
             messages.error(request, "Bad Credentials")
             return redirect('homepage')
-        return render(request, 'accounts/User/login.html')
+    return render(request, 'accounts/User/login.html')
 
 
 def forgot(request):
@@ -130,7 +129,7 @@ def director_requester(request):
 
 
 def cash(request):
-    return render(request, 'accounts/Accounting/cash.html')
+    return render(request, 'accounts/Admin/Accounting/cash.html')
 
 
 def signout(request):

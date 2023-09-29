@@ -24,11 +24,6 @@ body {
         z-index: -1;
 }
 
-.logo {
-    width: 20px;
-    height: 20px;
-    align-items: center;
-}
 
 .title{
     position: absolute;
@@ -53,16 +48,6 @@ body {
     position: absolute;
     left: 1100px;
     top: 270px;
-}
-
-.wrapper .login_icon {
-    position: relative;
-    bottom: 20px;
-    right: 20;
-    width: 18%;
-    height: 18%;
-    display: block;
-    margin: 0 auto;
 }
 
 .wrapper h1 {
