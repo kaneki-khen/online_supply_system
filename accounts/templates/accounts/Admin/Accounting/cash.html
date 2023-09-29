@@ -36,32 +36,27 @@
       <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <div class="sidebar">
-          <div class=" bg-white" id="sidebar-wrapper">
-            <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'cash' %}">Cash Disbursement</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-2 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-2 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!"></a>
-              <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="#!">
-                <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
-              </a>
+          <div class="d-flex flex-wrap align-content-between h-100">
+            <div class="bg-white w-100" id="sidebar-wrapper">
+              <div class="list-group w-100">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'notification' %}">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'requester' %}">Purchase Request</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'cash' %}">Cash Disbursement</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'tracker' %}">Request Tracker</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'history' %}">History</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'about' %}">About Us</a>
+              </div>
             </div>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 border-0" href="{% url 'login' %}">
+              <img class="arrow_img" src="{% static 'images/arrow_right.png' %}" alt=""> Logout
+            </a>
           </div>
         </div>
-      
     
-        <div class="row w-100 m-auto border text-start text-dark" style="border: 1px solid black !important; border-bottom: none !important; margin-top: 2rem !important; ">
+        <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
+          <div class="container">
+            <h1> <img class="notiff" src="{% static 'images/bell.png' %}" alt="">CASH DISBURSEMENT</h1>
+          </div>
           <div class="col-12">
             <p>
               Purchase Request No. 000003 is waiting for you.
@@ -69,9 +64,5 @@
             <p>1 hr ago</p>
           </div>
         </div>  
-
-    <div class="fund">
-        <h3> <img class="notiff" src="{% static 'images/bell.png' %}" alt="">CASH DISBURSEMENT</h3>
-    </div>
 </body>  
 </html>  
