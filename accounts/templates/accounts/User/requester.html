@@ -56,7 +56,7 @@
         {%csrf_token%}
         <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
-            <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
+            <h1 class="pr text-center pt-4">CREATE A PURCHASE REQUEST</h1>  
           </div>
           <form action="" method="post">
             {% csrf_token %}
@@ -90,12 +90,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <!-- <td><input type="text" class="form-control" name="item_name"></td>
-                  <td><input type="text" class="form-control" name="item_description"></td>
-                  <td><input type="text" class="form-control" name="item_unit"></td>
-                  <td><input type="text" class="form-control" name="item_quantity"></td>
-                  <td><input type="text" class="form-control" name="item_price"></td>
-                </tbody> -->
+                  <tr class="item-row" style="display: none;">
+                    <td style="text-align: center;"><span class="item-no">1</span></td>
+                    <td><input type="text" class="form-control" name="item_name[]"></td>
+                    <td><input type="text" class="form-control" name="item_description[]"></td>
+                    <td><input type="text" class="form-control" name="item_unit[]"></td>
+                    <td><input type="text" class="form-control" name="item_quantity[]"></td>
+                    <td><input type="text" class="form-control" name="item_price[]"></td>
+                </tr>
+                </tbody>
             </table>
           </div>
         <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
@@ -128,39 +131,26 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-      // Counter for item numbers
-      let itemCounter = 1;
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const itemTable = document.getElementById('itemTable');
+    const addButton = document.querySelector('.add-new');
+    let itemNumber = 1; // Initialize item number
 
-      // Function to add a new item row
-      function addNewItem() {
-          const itemTableBody = document.querySelector("#itemTable tbody");
+    addButton.addEventListener('click', function () {
+        const newRow = itemTable.querySelector('.item-row').cloneNode(true);
+        const itemNumberSpan = newRow.querySelector('.item-no');
+        itemNumberSpan.textContent = itemNumber;
+        itemNumber++;
 
-          // Create a new row for the item
-          const newRow = document.createElement("tr");
-          newRow.innerHTML = `
-              <th scope="row">${itemCounter}</th>
-              <td><input type="text" class="form-control" name="item_name"></td>
-              <td><input type="text" class="form-control" name="item_description"></td>
-              <td><input type="text" class="form-control" name="item_unit"></td>
-              <td><input type="text" class="form-control" name="item_quantity"></td>
-              <td><input type="text" class="form-control" name="item_price"></td>
-          `;
+        itemTable.querySelector('tbody').appendChild(newRow);
+        newRow.style.display = 'table-row'; // Show the new row
+    });
+});
+</script>
 
-          // Append the new row to the table
-          itemTableBody.appendChild(newRow);
-
-          // Increment the item counter
-          itemCounter++;
-      }
-
-      // Bind the click event to the "Add Item" button
-      $(document).ready(function () {
-          $(".add-new").click(function () {
-              addNewItem();
-          });
-      });
-  </script>
+      
+      
     
     <script>
       $(document).ready(function () {
