@@ -53,7 +53,7 @@
             </a>
           </div>
         </div>
-
+        {%csrf_token%}
         <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
             <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
@@ -89,7 +89,7 @@
                         <th class="">Price</th>
                     </tr>
                 </thead>
-                <tbody>
+                      
                     <!-- Rows for items will be added here dynamically -->
                 </tbody>
             </table>
