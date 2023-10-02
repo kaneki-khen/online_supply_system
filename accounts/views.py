@@ -157,3 +157,34 @@ def supply_office_history(request):
 
 def supply_office_about(request):
     return render(request, 'accounts/Admin/Supply_office/about.html')
+
+# views.py
+
+from django.shortcuts import render, redirect
+from .forms import PurchaseRequestForm
+from .models import PurchaseRequestItem
+
+def request(request):
+    if request.method == 'POST':
+        form = PurchaseRequestForm(request.POST)
+        if form.is_valid():
+            # Save form data to MongoDB
+            item = PurchaseRequestItem.objects.create(
+                department=form.cleaned_data['department'],
+                purpose=form.cleaned_data['purpose'],
+                item_name=form.cleaned_data['item_name'],
+                item_description=form.cleaned_data['item_description'],
+                item_unit=form.cleaned_data['item_unit'],
+                item_quantity=form.cleaned_data['item_quantity'],
+                item_price=form.cleaned_data['item_price'],
+            )
+            item.save()
+            # You can also add further logic here, such as sending notifications, etc.
+            
+            # Redirect or display a success message
+            return redirect('purchase_request_confirmation')
+    else:
+        form = PurchaseRequestForm()
+
+    return render(request, 'accounts/User/requester.html', {'form': form})
+

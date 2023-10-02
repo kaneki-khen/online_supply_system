@@ -1,7 +1,14 @@
-from django import forms
-from .models import Item
+# forms.py
 
-class ItemForm(forms.ModelForm):
-    class Meta:
-        model = Item
-        fields = '__all__'  # You can specify the fields you want to include here if needed
+from django import forms
+
+class PurchaseRequestForm(forms.Form):
+    department = forms.CharField(max_length=100)
+    purpose = forms.CharField(widget=forms.Textarea)
+    item_name = forms.CharField(max_length=100)
+    item_description = forms.CharField(widget=forms.Textarea)
+    item_unit = forms.CharField(max_length=50)
+    item_quantity = forms.IntegerField()
+    item_price = forms.DecimalField(max_digits=10, decimal_places=2)
+
+
