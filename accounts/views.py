@@ -9,7 +9,6 @@ from django.contrib.auth import login as auth_login
 
 
 def requester(request,):
-    requester = Requester.objects.all()
     return render(request, 'accounts/User/requester.html')
 
 
@@ -128,33 +127,34 @@ def supply_office_about(request):
 def supply_office_inventory(request):
     return render(request, 'accounts/Admin/Supply_office/inventory.html')
 # views.py
-
 from django.shortcuts import render, redirect
-from .forms import PurchaseRequestForm
-from .models import PurchaseRequestItem
+from django.contrib import messages
+from .models import Item
 
 def request(request):
-    if request.method == 'POST':
-        print('way lami')
-        form = PurchaseRequestForm(request.POST)
-        if form.is_valid():
-            # Save form data to MongoDB
-            item = PurchaseRequestItem.objects.create(
-                department=form.cleaned_data['department'],
-                purpose=form.cleaned_data['purpose'],
-                item_name=form.cleaned_data['item_name'],
-                item_description=form.cleaned_data['item_description'],
-                item_unit=form.cleaned_data['item_unit'],
-                item_quantity=form.cleaned_data['item_quantity'],
-                item_price=form.cleaned_data['item_price'],
-            )
-            item.save()
-            # You can also add further logic here, such as sending notifications, etc.
-            print("success")
-            # Redirect or display a success message
-            return redirect('purchase_request_confirmation')
-    else:
-        form = PurchaseRequestForm()
+    
+    if request.method == "POST":
+        
 
-    return render(request, 'accounts/User/requester.html', {'form': form})
+        name = request.POST.get('item_name[]', '')
+        description = request.POST.get('item_description[]', '')
+        unit = request.POST.get('item_unit[]', '')
+        quantity = request.POST.get('item_quantity[]', 0)
+        price = request.POST.get('item_price[]', 0)
+        department = request.POST.get('department')
+        purpose= request.POST.get('item_purpose', '')
+        
+        # Assuming you have a logged-in user
+        user = request.user
 
+        print('ganagana')
+
+        # Create and save the item
+        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
+        item.save()
+        print('ganahin')
+        
+        messages.success(request, "Item added successfully.")
+        
+        return redirect('request')  # Redirect to the same page after submission
+    return render(request, 'accounts/User/requester.html')
