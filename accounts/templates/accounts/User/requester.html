@@ -58,11 +58,11 @@
           <div class="container">
             <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
           </div>
-          <form action="" method="post">
+          <form action="{% url 'request' %}" method="post">
             {% csrf_token %}
             <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
-              <select class="form-control" id="departmentDropdown">
+              <select class="form-control" id="departmentDropdown" name="department">
                   <option value="option1">College of Arts and Sciences</option>
                   <option value="option2">College of Agriculture</option>
                   <option value="option3">College of Forestry</option>
@@ -75,7 +75,7 @@
             </div>
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1 p-2">Purpose</label>
-        <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3" name="item_purpose"></textarea>
       </div>
           <div class="container">
             <table class="table table-bordered table-responsive" id="itemTable">
@@ -95,19 +95,21 @@
                     <td><input type="text" class="form-control" name="item_name[]"></td>
                     <td><input type="text" class="form-control" name="item_description[]"></td>
                     <td><input type="text" class="form-control" name="item_unit[]"></td>
-                    <td><input type="text" class="form-control" name="item_quantity[]"></td>
-                    <td><input type="text" class="form-control" name="item_price[]"></td>
-                </tr>
+                    <td><input type="text" class="form-control" name="item_quantity[]" onchange="calculateTotalAmount()"></td>
+                    <td><input type="text" class="form-control" name="item_price[]" onchange="calculateTotalAmount()"></td>
+                  </tr>
                 </tbody>
+                
             </table>
           </div>
         <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
           <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
           <input class="btn btn-primary" type="submit" value="Submit">
         </div>
+      </form>
         <div 
         class="container justify-content-end align-items-baseline">
-          Total Amount: _______________
+          Total Amount: <span id="totalAmount">0.00</span>
           <a href="#" onclick="showConfirmationPopup()">
             <img class="cart_image" src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
           </a>
@@ -118,7 +120,7 @@
             <p>Your purchase request has been received and is being processed.</p>
           </div>
         </div>
-      </form>
+      
       </div>
     </div> 
     </main>
@@ -139,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('click', function () {
         const newRow = itemTable.querySelector('.item-row').cloneNode(true);
+        newRow.querySelector('[name="item_name[]"]').value = ''; // Clear the input field
+
         const itemNumberSpan = newRow.querySelector('.item-no');
         itemNumberSpan.textContent = itemNumber;
         itemNumber++;
@@ -148,6 +152,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+<!-- HTML template -->
+<!-- ... (other HTML code) ... -->
+
+
+<!-- JavaScript for dynamic row addition and total amount calculation -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const addButton = document.querySelector('.add-new');
+    const totalAmountSpan = document.getElementById('totalAmount');
+    let itemNumber = 1; // Initialize item number
+
+    addButton.addEventListener('click', function () {
+        // Your code for adding a new item row (as you have previously implemented)
+
+        // Calculate total amount and update the span
+        calculateTotalAmount();
+    });
+
+    
+  function calculateTotalAmount() {
+    let totalAmount = 0.00;
+    const itemRows = document.querySelectorAll('.item-row');
+    
+    itemRows.forEach((itemRow) => {
+      const quantity = parseFloat(itemRow.querySelector('[name="item_quantity[]"]').value) || 0;
+      const price = parseFloat(itemRow.querySelector('[name="item_price[]"]').value) || 0;
+      totalAmount += quantity * price;
+    });
+    
+    document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
+  }
+
+
+});
+</script>
+
+
 
       
       

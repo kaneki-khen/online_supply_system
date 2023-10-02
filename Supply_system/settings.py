@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'Supply_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'inventorydb',
+        'NAME': 'mydb',
         'HOST': 'localhost',
         'PORT': 27017,
 
