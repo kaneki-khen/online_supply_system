@@ -180,7 +180,7 @@ def request(request):
             )
             item.save()
             # You can also add further logic here, such as sending notifications, etc.
-            
+            print("success")
             # Redirect or display a success message
             return redirect('purchase_request_confirmation')
     else:
