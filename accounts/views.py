@@ -10,20 +10,7 @@ from django.contrib.auth import login as auth_login
 
 def requester(request,):
     requester = Requester.objects.all()
-    context= {
-        'requester': requester, 
-        'products': products
-        }
-    return render(request, 'accounts/User/requester.html', context)
-
-
-def products(request):
-    products = Products.objects.all()   
-    return render(request, 'accounts/User/products.html', {'products': products})
-
-
-def status(request):
-    return render(request, 'accounts/User/status.html') 
+    return render(request, 'accounts/User/requester.html')
 
 
 def homepage(request):
@@ -148,6 +135,7 @@ from .models import PurchaseRequestItem
 
 def request(request):
     if request.method == 'POST':
+        print('way lami')
         form = PurchaseRequestForm(request.POST)
         if form.is_valid():
             # Save form data to MongoDB

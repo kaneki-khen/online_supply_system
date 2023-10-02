@@ -15,8 +15,6 @@ class Requester (models.Model):
 
 # models.py
 
-from django.db import models
-
 class PurchaseRequestItem(models.Model):
     department = models.CharField(max_length=100)
     purpose = models.TextField()
@@ -25,3 +23,5 @@ class PurchaseRequestItem(models.Model):
     item_unit = models.CharField(max_length=50)
     item_quantity = models.IntegerField()
     item_price = models.DecimalField(max_digits=10, decimal_places=2)
+    def __str__(self)   :
+        return self.item_name
