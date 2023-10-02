@@ -58,7 +58,8 @@
           <div class="container">
             <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
           </div>
-          <form>
+          <form action="" method="post">
+            {% csrf_token %}
             <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
               <select class="form-control" id="departmentDropdown">
@@ -71,12 +72,11 @@
                   <option value="option3">Graduate School</option>
                   <option value="option4">  Others please specify:</option>
               </select>
-
+            </div>
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1 p-2">Purpose</label>
         <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3"></textarea>
       </div>
-          </form>
           <div class="container">
             <table class="table table-bordered table-responsive" id="itemTable">
                 <thead>
@@ -89,9 +89,13 @@
                         <th class="">Price</th>
                     </tr>
                 </thead>
-                      
-                    <!-- Rows for items will be added here dynamically -->
-                </tbody>
+                <tbody>
+                  <!-- <td><input type="text" class="form-control" name="item_name"></td>
+                  <td><input type="text" class="form-control" name="item_description"></td>
+                  <td><input type="text" class="form-control" name="item_unit"></td>
+                  <td><input type="text" class="form-control" name="item_quantity"></td>
+                  <td><input type="text" class="form-control" name="item_price"></td>
+                </tbody> -->
             </table>
           </div>
         <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
@@ -111,6 +115,7 @@
             <p>Your purchase request has been received and is being processed.</p>
           </div>
         </div>
+      </form>
       </div>
     </div> 
     </main>
@@ -135,11 +140,11 @@
           const newRow = document.createElement("tr");
           newRow.innerHTML = `
               <th scope="row">${itemCounter}</th>
-              <td><input type="text" class="form-control" name="item_name[]"></td>
-              <td><input type="text" class="form-control" name="item_description[]"></td>
-              <td><input type="text" class="form-control" name="item_unit[]"></td>
-              <td><input type="text" class="form-control" name="item_quantity[]"></td>
-              <td><input type="text" class="form-control" name="item_price[]"></td>
+              <td><input type="text" class="form-control" name="item_name"></td>
+              <td><input type="text" class="form-control" name="item_description"></td>
+              <td><input type="text" class="form-control" name="item_unit"></td>
+              <td><input type="text" class="form-control" name="item_quantity"></td>
+              <td><input type="text" class="form-control" name="item_price"></td>
           `;
 
           // Append the new row to the table
