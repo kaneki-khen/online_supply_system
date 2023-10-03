@@ -1,12 +1,10 @@
 from django.urls import path
-from . import views
+from . import views 
 
 
 urlpatterns = [
-   path('',views.homepage, name='homepage'),
+   path('dashboard',views.homepage, name='homepage'),
    path('requester/',views.requester, name='requester'),
-   path('products/',views.products, name='products'),
-   path('status/',views.status, name='status'),
    path('register/',views.register, name='register'),
    path('forgot/',views.forgot, name='forgot'),
    path('reset/',views.reset, name='reset'),
@@ -27,6 +25,6 @@ urlpatterns = [
    path('supply_office/notification/', views.supply_office_notification,name='supply_office_notification'),
    path('supply_office/history/', views.supply_office_history,name='supply_office_history'),
    path('supply_office/about/', views.supply_office_about,name='supply_office_about'),
-   
+   path('supply_office/inventory/', views.supply_office_inventory,name='supply_office_inventory'),
    
 ]

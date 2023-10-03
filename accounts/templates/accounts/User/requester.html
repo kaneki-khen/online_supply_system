@@ -53,16 +53,16 @@
             </a>
           </div>
         </div>
-
+        {%csrf_token%}
         <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
-            <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
+            <h1 class="pr text-center pt-4">CREATE PURCHASE REQUEST</h1>  
           </div>
           <form action="{% url 'requester' %}" method="post">
             {% csrf_token %}
             <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
-              <select class="form-control" id="departmentDropdown" name="department">
+              <select class="form-control" id="departmentDropdown">
                   <option value="option1">College of Arts and Sciences</option>
                   <option value="option2">College of Agriculture</option>
                   <option value="option3">College of Forestry</option>
@@ -75,7 +75,7 @@
             </div>
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1 p-2">Purpose</label>
-        <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3" name="item_purpose"></textarea>
+        <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3"></textarea>
       </div>
           <div class="container">
             <table class="table table-bordered table-responsive" id="itemTable">
@@ -95,21 +95,19 @@
                     <td><input type="text" class="form-control" name="item_name[]"></td>
                     <td><input type="text" class="form-control" name="item_description[]"></td>
                     <td><input type="text" class="form-control" name="item_unit[]"></td>
-                    <td><input type="text" class="form-control" name="item_quantity[]" onchange="calculateTotalAmount()"></td>
-                    <td><input type="text" class="form-control" name="item_price[]" onchange="calculateTotalAmount()"></td>
-                  </tr>
+                    <td><input type="text" class="form-control" name="item_quantity[]"></td>
+                    <td><input type="text" class="form-control" name="item_price[]"></td>
+                </tr>
                 </tbody>
-                
             </table>
           </div>
         <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
           <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
           <input class="btn btn-primary" type="submit" value="Submit">
         </div>
-      </form>
         <div 
-        class="container justify-content-end align-items-baseline">
-          Total Amount: <span id="totalAmount">0.00</span>
+          class="container justify-content-end align-items-baseline">
+          Total Amount: _______________
           <a href="#" onclick="showConfirmationPopup()">
             <img class="cart_image" src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
           </a>
@@ -120,7 +118,7 @@
             <p>Your purchase request has been received and is being processed.</p>
           </div>
         </div>
-      
+      </form>
       </div>
     </div> 
     </main>
@@ -141,8 +139,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addButton.addEventListener('click', function () {
         const newRow = itemTable.querySelector('.item-row').cloneNode(true);
-        newRow.querySelector('[name="item_name[]"]').value = ''; // Clear the input field
-
         const itemNumberSpan = newRow.querySelector('.item-no');
         itemNumberSpan.textContent = itemNumber;
         itemNumber++;

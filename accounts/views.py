@@ -5,39 +5,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
+  
 
 
-def home(request):
-    requester = Requester.objects.all()
-    status = Status.objects.all()
-    total_requester = requester.count()
-    total_status = status.count()
-    approved = status.filter(status='Approved').count()
-    pending = status.filter(status='Pending').count()
-    declined = status.filter(status='Declined').count()
-
-    context = {
-        'requester': requester, 
-        'status': status, 
-        'total_requester': total_requester,
-        'total_status': total_status,
-        'approved': approved,
-        'pending': pending,
-        'declined': declined
-        }
-    return render(request, 'accounts/User/dashboard.html', context)   
-
-
-
-
-
-def products(request):
-    products = Products.objects.all()   
-    return render(request, 'accounts/User/products.html', {'products': products})
-
-
-def status(request):
-    return render(request, 'accounts/User/status.html') 
+def requester(request,):
+    return render(request, 'accounts/User/requester.html')
 
 
 def homepage(request):
@@ -152,6 +124,9 @@ def supply_office_history(request):
 def supply_office_about(request):
     return render(request, 'accounts/Admin/Supply_office/about.html')
 
+def supply_office_inventory(request):
+    return render(request, 'accounts/Admin/Supply_office/inventory.html')
+# views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Item
@@ -159,13 +134,20 @@ from .models import Item
 def requester(request):
     
     if request.method == "POST":
-        name = request.POST.get('item_name', '')  # Get the single value, not a list
-        description = request.POST.get('item_description', '')  # Get the single value, not a list
-        unit = request.POST.get('item_unit', '')  # Get the single value, not a list
-        quantity = request.POST.get('item_quantity', '')  # Get the single value, not a list
-        price = request.POST.get('item_price', '')  # Get the single value, not a list
-        department = request.POST.get('department', '')  # Get the single value, not a list
-        purpose = request.POST.get('item_purpose', '')  # Get the single value, not a list
+        
+
+        name = request.POST.get('item_name[]', '')
+        description = request.POST.get('item_description[]', '')
+        unit = request.POST.get('item_unit[]', '')
+        quantity = request.POST.get('item_quantity[]', 0)
+        price = request.POST.get('item_price[]', 0)
+        department = request.POST.get('department')
+        purpose= request.POST.get('item_purpose', '')
+        
+        # Assuming you have a logged-in user
+        user = request.user
+
+        print('ganagana')
 
         # Create and save the item
         item = Item(
