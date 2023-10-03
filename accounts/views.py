@@ -28,13 +28,7 @@ def home(request):
     return render(request, 'accounts/User/dashboard.html', context)   
 
 
-def requester(request,):
-    requester = Requester.objects.all()
-    context= {
-        'requester': requester, 
-        'products': products
-        }
-    return render(request, 'accounts/User/requester.html', context)
+
 
 
 def products(request):
@@ -158,35 +152,37 @@ def supply_office_history(request):
 def supply_office_about(request):
     return render(request, 'accounts/Admin/Supply_office/about.html')
 
-# views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Item
 
-def request(request):
-    print('gana')
+def requester(request):
+    
     if request.method == "POST":
-        print('waygana')
-
-        name = request.POST.get('item_name[]', '')
-        description = request.POST.get('item_description[]', '')
-        unit = request.POST.get('item_unit[]', '')
-        quantity = request.POST.get('item_quantity[]', 0)
-        price = request.POST.get('item_price[]', 0)
-        department = request.POST.get('department')
-        purpose= request.POST.get('item_purpose', '')
-        
-        # Assuming you have a logged-in user
-        user = request.user
-
-        print('ganagana')
+        name = request.POST.get('item_name', '')  # Get the single value, not a list
+        description = request.POST.get('item_description', '')  # Get the single value, not a list
+        unit = request.POST.get('item_unit', '')  # Get the single value, not a list
+        quantity = request.POST.get('item_quantity', '')  # Get the single value, not a list
+        price = request.POST.get('item_price', '')  # Get the single value, not a list
+        department = request.POST.get('department', '')  # Get the single value, not a list
+        purpose = request.POST.get('item_purpose', '')  # Get the single value, not a list
 
         # Create and save the item
-        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
+        item = Item(
+            user=request.user,
+            name=name,
+            description=description,
+            unit=unit,
+            quantity=quantity,
+            price=price,
+            department=department,
+            purpose=purpose,
+        )
         item.save()
-        print('ganahin')
-        
+
         messages.success(request, "Item added successfully.")
-        
+
         return redirect('request')  # Redirect to the same page after submission
     return render(request, 'accounts/User/requester.html')
+
+

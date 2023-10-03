@@ -58,7 +58,7 @@
           <div class="container">
             <h1 class="pr text-center pt-4">PURCHASE REQUEST</h1>  
           </div>
-          <form action="{% url 'request' %}" method="post">
+          <form action="{% url 'requester' %}" method="post">
             {% csrf_token %}
             <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
@@ -170,22 +170,20 @@ document.addEventListener('DOMContentLoaded', function () {
         calculateTotalAmount();
     });
 
-    
-  function calculateTotalAmount() {
-    let totalAmount = 0.00;
-    const itemRows = document.querySelectorAll('.item-row');
-    
-    itemRows.forEach((itemRow) => {
-      const quantity = parseFloat(itemRow.querySelector('[name="item_quantity[]"]').value) || 0;
-      const price = parseFloat(itemRow.querySelector('[name="item_price[]"]').value) || 0;
-      totalAmount += quantity * price;
-    });
-    
-    document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
-  }
+    function calculateTotalAmount() {
+        var totalAmount = 0;
+        const itemRows = document.querySelectorAll('.item-row');
+        itemRows.forEach(function (row) {
+            const quantity = parseFloat(row.querySelector('[name^="item_quantity"]').value) || 0;
+            const price = parseFloat(row.querySelector('[name^="item_price"]').value) || 0;
+            totalAmount += quantity * price;
+        });
 
-
+        // Update the total amount element in the HTML
+        totalAmountSpan.textContent = totalAmount.toFixed(2);
+    }
 });
+
 </script>
 
 
