@@ -5,11 +5,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Item
   
-
-
-def requester(request,):
-    return render(request, 'accounts/User/requester.html')
 
 
 def homepage(request):
@@ -126,35 +126,69 @@ def supply_office_about(request):
 
 def supply_office_inventory(request):
     return render(request, 'accounts/Admin/Supply_office/inventory.html')
-# views.py
+
+department_mapping = {
+    'option1': 'College of Arts and Sciences',
+    'option2': 'College of Agriculture',
+    'option3': 'College of Forestry',
+    'option4': 'College of Hospitality Management and Tourism',
+    'option5': 'College of Technology and Engineering',
+    'option6': 'College of Education',
+    'option7': 'Graduate School',
+}
+
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from .models import Item
+from django.contrib import messages
 
-def request(request):
-    
+# Define the department mapping dictionary
+department_mapping = {
+    'option1': 'College of Arts and Sciences',
+    'option2': 'College of Agriculture',
+    'option3': 'College of Forestry',
+    'option4': 'College of Hospitality Management and Tourism',
+    'option5': 'College of Technology and Engineering',
+    'option6': 'College of Education',
+    'option7': 'Graduate School',
+}
+
+
+
+def requester(request):
     if request.method == "POST":
-        
+        item_names = request.POST.getlist('item_name[]', '')
+        descriptions = request.POST.getlist('item_description[]', '')
+        units = request.POST.getlist('item_unit[]', '')
+        quantities = request.POST.getlist('item_quantity[]', '')  # Get the user's input for quantity as a list
+        prices = request.POST.getlist('item_price[]', '')  # Get the user's input for price as a list
+        department_option = request.POST.get('departmentDropdown', '')  # Get the selected department option
 
-        name = request.POST.get('item_name[]', '')
-        description = request.POST.get('item_description[]', '')
-        unit = request.POST.get('item_unit[]', '')
-        quantity = request.POST.get('item_quantity[]', 0)
-        price = request.POST.get('item_price[]', 0)
-        department = request.POST.get('department')
-        purpose= request.POST.get('item_purpose', '')
-        
+        # Map the selected option to the department name
+        department_name = department_mapping.get(department_option, '')
+
+        purpose = request.POST.get('item_purpose', '')
+        print('gana')
         # Assuming you have a logged-in user
         user = request.user
+        print('ganagan')
 
-        print('ganagana')
+        total_amount = 0  # Initialize the total amount
 
-        # Create and save the item
-        item = Item(user=user, name=name, description=description, unit=unit, quantity=quantity, price=price, department=department, purpose=purpose)
-        item.save()
-        print('ganahin')
-        
-        messages.success(request, "Item added successfully.")
-        
-        return redirect('request')  # Redirect to the same page after submission
+        # Create and save items with the correct department name, quantity, and price
+        for name, description, unit, quantity, price in zip(item_names, descriptions, units, quantities, prices):
+            try:
+                quantity = float(quantity)
+                price = float(price)
+                total_amount += quantity * price
+                
+                # Create and save the item
+                item = Item(name=name, description=description, unit=unit, quantity=quantity, price=price, department=department_name, purpose=purpose)
+                item.save()
+            except ValueError:
+                pass  # Handle invalid quantity or price here if necessary
+                print('shdgasfdhasfasg')
+        messages.success(request, f"Items added successfully. Total amount: ${total_amount:.2f}")
+
+        return redirect('requester')  # Redirect to the same page after submission
+
     return render(request, 'accounts/User/requester.html')

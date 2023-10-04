@@ -203,5 +203,63 @@
           Swal.fire(text)
         }
     }
+
+    const MongoClient = require('mongodb').MongoClient;
+
+const url = 'mongodb://localhost:27017'; // Replace with your MongoDB connection string
+const dbName = 'inventorydb';
+
+MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+  if (err) throw err;
+
+  const db = client.db(dbName);
+
+  // Now you can query the database and retrieve the data.
+});
+
+
+    // Assuming you have a collection named "requests" in your database
+const requestsCollection = db.collection('items');
+
+requestsCollection.findOne({ /* Your query criteria here */ }, (err, request) => {
+  if (err) throw err;
+
+  // Once you have the data from MongoDB, populate your HTML template
+  const modalBody = document.querySelector('.modal-body');
+  const approvedOn = document.querySelector('.modal-body strong');
+  const prId = document.querySelector('.col-6.border p');
+  const requesterId = document.querySelector('.col-6.border.text-dark.text-start p');
+  const department = document.querySelector('.row.w-100.m-auto.border.text-dark.text-start p');
+  const purpose = document.querySelector('.row.w-100.m-auto.border.text-dark.text-start p');
+  const itemTable = document.getElementById('itemTable').getElementsByTagName('tbody')[0];
+  const totalAmount = document.querySelector('.container.justify-content-end.align-items-baseline');
+
+  // Populate HTML elements with data from MongoDB
+  approvedOn.textContent = `Approved on: ${request.approvedDate}`;
+  prId.textContent = `PR ID: ${request.prId}`;
+  requesterId.textContent = `Requester ID: ${request.requesterId}`;
+  department.textContent = `Department: ${request.department}`;
+  purpose.textContent = `Purpose: ${request.purpose}`;
+
+  // Create a table row for the retrieved data
+  const newRow = itemTable.insertRow();
+  newRow.insertCell(0).textContent = request.itemNo;
+  newRow.insertCell(1).textContent = request.itemName;
+  newRow.insertCell(2).textContent = request.itemDescription;
+  newRow.insertCell(3).textContent = request.unit;
+  newRow.insertCell(4).textContent = request.quantity;
+  newRow.insertCell(5).textContent = request.price;
+
+  // Calculate and populate the total amount (you'll need to compute this)
+  totalAmount.textContent = `Total Amount: ${calculateTotalAmount(requests)}`;
+});
+
+// Define a function to calculate the total amount
+function calculateTotalAmount(requests) {
+  // Calculate and return the total amount based on the data
+  // You'll need to implement your own logic here
+  // Example: Loop through requests and sum the prices
+}
+
     </script>
 </html>

@@ -53,29 +53,28 @@
             </a>
           </div>
         </div>
-        {%csrf_token%}
         <div class="container-fluid" style=" height: 68vh; overflow-y: auto; overflow-x: hidden; ">
           <div class="container">
             <h1 class="pr text-center pt-4">CREATE PURCHASE REQUEST</h1>  
           </div>
-          <form action="" method="post">
+          <form action="{% url 'requester' %}" method="post">
             {% csrf_token %}
             <div class="form-group mb-3">
               <label for="departmentDropdown">Choose Department:</label>
-              <select class="form-control" id="departmentDropdown">
+              <select class="form-control" id="departmentDropdown" name="departmentDropdown">
                   <option value="option1">College of Arts and Sciences</option>
                   <option value="option2">College of Agriculture</option>
                   <option value="option3">College of Forestry</option>
-                  <option value="option3">College of Hospitality Management and Tourism</option>
-                  <option value="option3">College of Technology and Engineering</option>
-                  <option value="option3">College of Education</option>
-                  <option value="option3">Graduate School</option>
-                  <option value="option4">  Others please specify:</option>
+                  <option value="option4">College of Hospitality Management and Tourism</option>
+                  <option value="option5">College of Technology and Engineering</option>
+                  <option value="option6">College of Education</option>
+                  <option value="option7">Graduate School</option>
+                  <option value="option8">  Others please specify:</option>
               </select>
             </div>
       <div class="form-group mb-3">
         <label for="exampleFormcontrolTextarea1 p-2">Purpose</label>
-        <textarea class="form-control" id="exampleFormcontrolTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormcontrolTextarea1" name="item_purpose" rows="3"></textarea>
       </div>
           <div class="container">
             <table class="table table-bordered table-responsive" id="itemTable">
@@ -103,19 +102,11 @@
           </div>
         <div class="text-start my-2 mx-5 mt-0" style=" display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
           <button type="button" class="btn btn-info text-white add-new"><i class="fa fa-plus"></i> Item</button>
-          <input class="btn btn-primary" type="submit" value="Submit">
+          
         </div>
         <div 
           class="container justify-content-end align-items-baseline">
-          Total Amount: _______________
-          <a href="#" onclick="showConfirmationPopup()">
-            <img class="cart_image" src="{% static 'images/cart.png' %}" alt="Icon" id="icon">
-          </a>
-          <div id="confirmationPopup" class="popup">
-            <span class="popup-close direction-rtl justify-content-end" onclick="hideConfirmationPopup()" >X</span>
-            <h2>Purchase Request Confirmation</h2>
-            <!-- Add your confirmation content here -->
-            <p>Your purchase request has been received and is being processed.</p>
+          <input class="btn btn-primary" type="submit" value="Submit">
           </div>
         </div>
       </form>
@@ -146,39 +137,56 @@ document.addEventListener('DOMContentLoaded', function () {
         itemTable.querySelector('tbody').appendChild(newRow);
         newRow.style.display = 'table-row'; // Show the new row
     });
-});
-</script>
 
-      
-      
-    
-    <script>
-      $(document).ready(function () {
-                // Add department when the "Add Department" button is clicked
-                $("#addDepartmentBtn").click(function () {
-                    // Get the new department name from the input field
-                    var newDepartment = $("#newDepartment").val();
-    
-                    // Check if the user entered a department name and it's not empty
-                    if (newDepartment.trim() !== "") {
-                        // Add the new department as an option in the select element
-                        $("#departmentDropdown").append('<option>' + newDepartment + '</option>');
-    
-                        // Clear the input field
-                        $("#newDepartment").val("");
-                    }
-                });
-    
-            });
-    </script>
+    // Calculate the total amount
+    const calculateTotal = function () {
+        let totalAmount = 0;
+        const quantityInputs = document.querySelectorAll('.quantity');
+        const priceInputs = document.querySelectorAll('.price');
 
-    <script>
-      function showConfirmationPopup() {
+        for (let i = 0; i < quantityInputs.length; i++) {
+            const quantity = parseFloat(quantityInputs[i].value) || 0;
+            const price = parseFloat(priceInputs[i].value) || 0;
+            totalAmount += quantity * price;
+        }
+
+        const totalAmountSpan = document.getElementById('totalAmountSpan');
+        totalAmountSpan.textContent = totalAmount.toFixed(2);
+    };
+
+    // Attach input event listeners to quantity and price inputs
+    const quantityInputs = document.querySelectorAll('.quantity');
+    const priceInputs = document.querySelectorAll('.price');
+
+    quantityInputs.forEach(input => {
+        input.addEventListener('input', calculateTotal);
+    });
+
+    priceInputs.forEach(input => {
+        input.addEventListener('input', calculateTotal);
+    });
+
+    // Trigger the initial calculation
+    calculateTotal();
+
+    // Update department name in the hidden input field
+    const departmentDropdown = document.getElementById('departmentDropdown');
+    departmentDropdown.addEventListener("change", function () {
+        const selectedOption = departmentDropdown.options[departmentDropdown.selectedIndex];
+        const selectedOptionText = selectedOption.textContent;
+        const selectedDepartmentNameInput = document.getElementById('selectedDepartmentName');
+        selectedDepartmentNameInput.value = selectedOptionText;
+    });
+
+    // Show/hide confirmation popup functions (if needed)
+    function showConfirmationPopup() {
         document.getElementById('confirmationPopup').style.display = 'block';
-      }
-    
-      function hideConfirmationPopup() {
+    }
+
+    function hideConfirmationPopup() {
         document.getElementById('confirmationPopup').style.display = 'none';
-      }
+    }
+});
+
     </script>
 </html>
