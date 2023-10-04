@@ -158,14 +158,16 @@ def requester(request):
         user = request.user
         print('ganagan')
 
-    
-                
+        total_amount = 0  # Initialize the total amount
+
+        # Create and save items with the correct department name, quantity, and price
+        
                 # Create and save the item
         item = Item(name=name, description=description, unit=unit, quantity=quantity, price=price, department=department_name, purpose=purpose)
         item.save()
             
         print('shdgasfdhasfasg')
-        messages.success(request, f"Items added successfully. Total amount: ${total_amount:.2f}")
+        
 
         return redirect('requester')  # Redirect to the same page after submission
 
