@@ -127,21 +127,7 @@ def supply_office_about(request):
 def supply_office_inventory(request):
     return render(request, 'accounts/Admin/Supply_office/inventory.html')
 
-department_mapping = {
-    'option1': 'College of Arts and Sciences',
-    'option2': 'College of Agriculture',
-    'option3': 'College of Forestry',
-    'option4': 'College of Hospitality Management and Tourism',
-    'option5': 'College of Technology and Engineering',
-    'option6': 'College of Education',
-    'option7': 'Graduate School',
-}
 
-from django.shortcuts import render, redirect
-from .models import Item
-from django.contrib import messages
-
-# Define the department mapping dictionary
 department_mapping = {
     'option1': 'College of Arts and Sciences',
     'option2': 'College of Agriculture',
@@ -172,21 +158,13 @@ def requester(request):
         user = request.user
         print('ganagan')
 
-        total_amount = 0  # Initialize the total amount
-
-        # Create and save items with the correct department name, quantity, and price
-        for name, description, unit, quantity, price in zip(item_names, descriptions, units, quantities, prices):
-            try:
-                quantity = float(quantity)
-                price = float(price)
-                total_amount += quantity * price
+    
                 
                 # Create and save the item
-                item = Item(name=name, description=description, unit=unit, quantity=quantity, price=price, department=department_name, purpose=purpose)
-                item.save()
-            except ValueError:
-                pass  # Handle invalid quantity or price here if necessary
-                print('shdgasfdhasfasg')
+        item = Item(name=name, description=description, unit=unit, quantity=quantity, price=price, department=department_name, purpose=purpose)
+        item.save()
+            
+        print('shdgasfdhasfasg')
         messages.success(request, f"Items added successfully. Total amount: ${total_amount:.2f}")
 
         return redirect('requester')  # Redirect to the same page after submission
