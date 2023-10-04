@@ -139,36 +139,34 @@ department_mapping = {
 }
 
 
-
 def requester(request):
+    
     if request.method == "POST":
-        item_names = request.POST.getlist('item_name[]', '')
-        descriptions = request.POST.getlist('item_description[]', '')
-        units = request.POST.getlist('item_unit[]', '')
-        quantities = request.POST.getlist('item_quantity[]', '')  # Get the user's input for quantity as a list
-        prices = request.POST.getlist('item_price[]', '')  # Get the user's input for price as a list
+        
+
+        name = request.POST.get('item_name[]', '')
+        description = request.POST.get('item_description[]', '')
+        quantity = int(request.POST.get('quantity[]', 0))
+        unit_price = float(request.POST.get('unit_price[]', 0))
+        purpose= request.POST.get('item_purpose', '')
         department_option = request.POST.get('departmentDropdown', '')  # Get the selected department option
 
         # Map the selected option to the department name
         department_name = department_mapping.get(department_option, '')
 
         purpose = request.POST.get('item_purpose', '')
-        print('gana')
+        
         # Assuming you have a logged-in user
         user = request.user
-        print('ganagan')
 
-        total_amount = 0  # Initialize the total amount
+        print('ganagana')
 
-        # Create and save items with the correct department name, quantity, and price
-        
-                # Create and save the item
-        item = Item(name=name, description=description, unit=unit, quantity=quantity, price=price, department=department_name, purpose=purpose)
+        # Create and save the item
+        item = Item(user=user, name=name, description=description, quantity=quantity, unit_price=unit_price, department=department_name, purpose=purpose)
         item.save()
-            
-        print('shdgasfdhasfasg')
+        print('ganahin')
         
-
+        messages.success(request, "Item added successfully.")
+        
         return redirect('requester')  # Redirect to the same page after submission
-
     return render(request, 'accounts/User/requester.html')
