@@ -314,6 +314,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .form-group{
   font-family: sans-serif ;
 }
+
+/* Styles for the pop-up */
 .popup {
   display: none;
   position: fixed;
@@ -326,10 +328,16 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
+
+/* Style for the close button */
 .popup-close {
   direction: rtl;
   display: block;
+  text-align: right;
+  cursor: pointer;
+  
 }
+
 label {
   display: inline-block;
   padding-top: 1rem;
